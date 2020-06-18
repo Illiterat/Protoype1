@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PhaseManager : MonoBehaviour
 {
-
     public int phase; // int for Phasemanagement
 
     private bool isCoroutineExecuting = false;
@@ -59,7 +58,6 @@ public class PhaseManager : MonoBehaviour
             yield break;
 
         isCoroutineExecuting = true; //saying a coroutine is running
-        //enter conditions for attack phase here
 
 
         yield return new WaitForSeconds(5); //phase lasts 5 seconds
