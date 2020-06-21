@@ -6,13 +6,12 @@ public class PhaseManager : MonoBehaviour
 {
     public int phase; // int for Phasemanagement
 
-    public List<GameObject> tiles = new List<GameObject>();
+    public List<GameObject> tiles = new List<GameObject>(); //List of tiles for activation
 
     private bool isCoroutineExecuting = false;
     public bool damage;
 
-    public int randomiser;
-
+    public int randomiser; //Variable for picking a random bool outcome for tiles.
 
     public GameObject projectile;
     public int fireSpeed;
@@ -28,7 +27,7 @@ public class PhaseManager : MonoBehaviour
 
     void Update()
     {
-        PhaseManagement();
+        PhaseManagement(); // calling switch statement
     }
 
     void PhaseManagement() //Switch statement to navigate phases
@@ -82,10 +81,20 @@ public class PhaseManager : MonoBehaviour
         Launch(emitters[1]);
          yield return new WaitForSeconds(1);
         Launch(emitters[0]);
+        yield return new WaitForSeconds(1);
+        Launch(emitters[0]);
+        yield return new WaitForSeconds(1);
+        Launch(emitters[1]);
+        yield return new WaitForSeconds(1);
+        Launch(emitters[2]);
+        yield return new WaitForSeconds(1);
+        Launch(emitters[1]);
+        yield return new WaitForSeconds(1);
+        Launch(emitters[0]);
 
         //End example pattern
 
-        yield return new WaitForSeconds(6); //phase lasts 10 seconds (I deducted the amount used in the firing of projectiles)
+        yield return new WaitForSeconds(1); //phase lasts 10 seconds (I deducted the amount used in the firing of projectiles)
         phase = 2; //moving to Attack Phase
         isCoroutineExecuting = false; //saying a coroutine is no longer running
     }
@@ -99,26 +108,24 @@ public class PhaseManager : MonoBehaviour
 
         foreach (GameObject tile in tiles )
         {
-            TileTriggerScript tileScript;
+            TileTriggerScript tileScript; //grabbing individual tile scripts
             tileScript = tile.GetComponent<TileTriggerScript>();
 
-            randomiser = Random.Range(1, 3);
+            randomiser = Random.Range(1, 3); //picking a random value for activated or inactivated
 
             if(randomiser == 2)
             {
-                tileScript.render.sharedMaterial = tileScript.color[1];
+                tileScript.render.sharedMaterial = tileScript.color[1]; //activating the tile
                 tileScript.activated = true;
             }
             else if (randomiser == 1)
             {
-                tileScript.render.sharedMaterial = tileScript.color[0];
+                tileScript.render.sharedMaterial = tileScript.color[0]; //not activating the tile
                 tileScript.activated = false;
             }
-           
-
         }
 
-        yield return new WaitForSeconds(5); //phase lasts 5 seconds
+        yield return new WaitForSeconds(2); //phase lasts 2 seconds
         damage = true;
         phase = 1; //moving to the damage phase
         isCoroutineExecuting = false; //saying a coroutine is no longer running

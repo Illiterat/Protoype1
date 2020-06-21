@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class DamageAndHealthValues : MonoBehaviour
@@ -31,6 +30,11 @@ public class DamageAndHealthValues : MonoBehaviour
         }
 
         if (bossHealth == 0 || bossHealth <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // loading the 'win' scene when the boss's health goes below 0
+        }
+
+        if (playerHealth == 0 || playerHealth <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // loading the 'win' scene when the boss's health goes below 0
         }
