@@ -6,8 +6,12 @@ public class PhaseManager : MonoBehaviour
 {
     public int phase; // int for Phasemanagement
 
+    public List<GameObject> tiles = new List<GameObject>();
+
     private bool isCoroutineExecuting = false;
     public bool damage;
+
+    public int randomiser;
 
     private void Start()
     {
@@ -44,8 +48,15 @@ public class PhaseManager : MonoBehaviour
             yield break;
 
         isCoroutineExecuting = true; //saying a coroutine is running
-        //enter conditions for dodge phase here
 
+        foreach (GameObject tile in tiles)
+        {
+            TileTriggerScript tileScript;
+            tileScript = tile.GetComponent<TileTriggerScript>();
+            
+            tileScript.render.sharedMaterial = tileScript.color[0];
+            tileScript.activated = false;
+        }
 
         yield return new WaitForSeconds(10); //phase lasts 10 seconds
         phase = 2; //moving to Attack Phase
@@ -59,6 +70,26 @@ public class PhaseManager : MonoBehaviour
 
         isCoroutineExecuting = true; //saying a coroutine is running
 
+        foreach (GameObject tile in tiles )
+        {
+            TileTriggerScript tileScript;
+            tileScript = tile.GetComponent<TileTriggerScript>();
+
+            randomiser = Random.Range(1, 3);
+
+            if(randomiser == 2)
+            {
+                tileScript.render.sharedMaterial = tileScript.color[1];
+                tileScript.activated = true;
+            }
+            else if (randomiser == 1)
+            {
+                tileScript.render.sharedMaterial = tileScript.color[0];
+                tileScript.activated = false;
+            }
+           
+
+        }
 
         yield return new WaitForSeconds(5); //phase lasts 5 seconds
         damage = true;
