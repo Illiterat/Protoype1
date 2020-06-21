@@ -25,6 +25,7 @@ public class ProjectileScript : MonoBehaviour
         if (other.tag == "Player")
         {
             healthManager.playerHealth--;
+            Destroy(gameObject);
         }
     }
 }

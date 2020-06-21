@@ -13,6 +13,13 @@ public class PhaseManager : MonoBehaviour
 
     public int randomiser;
 
+
+    public GameObject projectile;
+    public int fireSpeed;
+
+    public List<GameObject> emitters = new List<GameObject>();
+
+
     private void Start()
     {
         phase = 1; //starting phase
@@ -42,6 +49,12 @@ public class PhaseManager : MonoBehaviour
         }
     }
 
+    private void Launch(GameObject emitter)
+    {
+        GameObject projectileClone = Instantiate(projectile, emitter.transform.position, emitter.transform.rotation);
+        projectileClone.GetComponent<Rigidbody>().velocity = -transform.right * fireSpeed;
+    }
+
     public IEnumerator DodgePhase()
     {
         if (isCoroutineExecuting)  //checking to see if another coroutine is running before moving on
@@ -58,7 +71,21 @@ public class PhaseManager : MonoBehaviour
             tileScript.activated = false;
         }
 
-        yield return new WaitForSeconds(10); //phase lasts 10 seconds
+        //Example pattern
+        
+        Launch(emitters[0]);
+        yield return new WaitForSeconds(1);
+        Launch(emitters[1]);
+        yield return new WaitForSeconds(1);
+        Launch(emitters[2]);
+        yield return new WaitForSeconds(1);
+        Launch(emitters[1]);
+         yield return new WaitForSeconds(1);
+        Launch(emitters[0]);
+
+        //End example pattern
+
+        yield return new WaitForSeconds(6); //phase lasts 10 seconds (I deducted the amount used in the firing of projectiles)
         phase = 2; //moving to Attack Phase
         isCoroutineExecuting = false; //saying a coroutine is no longer running
     }
