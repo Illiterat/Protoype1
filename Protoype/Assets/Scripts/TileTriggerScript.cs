@@ -15,7 +15,7 @@ public class TileTriggerScript : MonoBehaviour
     private void Start()
     {
         activatorVariable = 1;
-         render = GetComponent<Renderer>();
+        render = GetComponent<Renderer>();
         render.enabled = true;
         render.sharedMaterial = color[0];
     }
@@ -29,7 +29,7 @@ public class TileTriggerScript : MonoBehaviour
 
         if(phase.phase == 2)
         {
-            activatorVariable = Random.Range(1, 2);
+            activatorVariable = Random.Range(1, 3);
         }
 
         if (phase.phase == 1)
