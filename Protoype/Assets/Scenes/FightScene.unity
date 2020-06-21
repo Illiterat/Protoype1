@@ -977,7 +977,7 @@ MonoBehaviour:
   enemyHB: {fileID: 853275135}
   playerBack: {fileID: 1727289608}
   enemyBack: {fileID: 792284996}
-  fractionScreen: 500
+  fractionScreen: 750
   Values: {fileID: 1648316210}
 --- !u!1 &1181299850
 GameObject:
