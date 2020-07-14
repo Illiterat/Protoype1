@@ -15,8 +15,8 @@ public class UIManager : MonoBehaviour
     float scaleXpos;
     float scaleYpos;
 
-    int playerMaxHealth = 10;
-    int bossMaxHealth = 10;
+    int playerMaxHealth = 5;
+    int bossMaxHealth = 30;
 
     float playerHealth;
     float bossHealth;

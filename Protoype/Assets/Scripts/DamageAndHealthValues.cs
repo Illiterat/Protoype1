@@ -14,8 +14,8 @@ public class DamageAndHealthValues : MonoBehaviour
     void Start()
     {
         playerDamage = 0;  // starting values for variables
-        playerHealth = 10;
-        bossHealth = 10;
+        playerHealth = 5;
+        bossHealth = 30;
     }
 
     void Update()
