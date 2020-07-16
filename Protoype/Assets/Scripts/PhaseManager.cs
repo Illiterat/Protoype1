@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PhaseManager : MonoBehaviour
 {
@@ -14,7 +15,9 @@ public class PhaseManager : MonoBehaviour
     public int randomiser; //Variable for picking a random bool outcome for tiles.
 
     public GameObject projectile;
-    public int fireSpeed;
+    public GameObject speedSlider; //Slider to change projectile speed at runtime.
+    [Range(1.0f, 50.0f)]
+    public float fireSpeed;
 
     public List<GameObject> emitters = new List<GameObject>();
 
@@ -23,10 +26,12 @@ public class PhaseManager : MonoBehaviour
     {
         phase = 1; //starting phase
         damage = false;
+        speedSlider.GetComponent<Slider>().value = fireSpeed;
     }
 
     void Update()
     {
+        fireSpeed = speedSlider.GetComponent<Slider>().value;
         PhaseManagement(); // calling switch statement
     }
 
