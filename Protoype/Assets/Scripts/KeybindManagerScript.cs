@@ -41,16 +41,6 @@ public class KeybindManagerScript : MonoBehaviour
         rightText.text = keys["Right"].ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Checking inputs are working correctly
-        if (Input.GetKeyDown(keys["Up"]))
-        {
-            Debug.Log("Up Key Pressed");
-        }
-    }
-
     private void OnGUI()
     {
         //Check if there is any currentKey selected
@@ -144,7 +134,6 @@ public class KeybindManagerScript : MonoBehaviour
             || keys["Right"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Right", "D"))
             )
         {
-            Debug.Log("Unsaved Changes");
             warningMessage.SetActive(true);
         }
 
