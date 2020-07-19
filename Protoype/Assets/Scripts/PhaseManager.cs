@@ -18,6 +18,8 @@ public class PhaseManager : MonoBehaviour
     public GameObject speedSlider; //Slider to change projectile speed at runtime.
     [Range(1.0f, 50.0f)]
     public float fireSpeed;
+    private float timeModifier; //Modifier used to change times between launching projectiles
+    public float launchTimeModifier; //Amount of projectiles that are shot before the first one reaches the middle of the players tiles
 
     public List<GameObject> emitters = new List<GameObject>();
 
@@ -32,6 +34,7 @@ public class PhaseManager : MonoBehaviour
     void Update()
     {
         fireSpeed = speedSlider.GetComponent<Slider>().value;
+        timeModifier = 14/fireSpeed; //Time it takes for a projectile to reach the centre of the players grid
         PhaseManagement(); // calling switch statement
     }
 
@@ -78,23 +81,23 @@ public class PhaseManager : MonoBehaviour
         //Example pattern
         
         Launch(emitters[0]);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(timeModifier/launchTimeModifier);
         Launch(emitters[1]);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(timeModifier/launchTimeModifier);
         Launch(emitters[2]);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(timeModifier/launchTimeModifier);
         Launch(emitters[1]);
-         yield return new WaitForSeconds(1);
+         yield return new WaitForSeconds(timeModifier/launchTimeModifier);
         Launch(emitters[0]);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(timeModifier/launchTimeModifier);
         Launch(emitters[0]);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(timeModifier/launchTimeModifier);
         Launch(emitters[1]);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(timeModifier/launchTimeModifier);
         Launch(emitters[2]);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(timeModifier/launchTimeModifier);
         Launch(emitters[1]);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(timeModifier/launchTimeModifier);
         Launch(emitters[0]);
 
         //End example pattern

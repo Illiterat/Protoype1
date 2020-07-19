@@ -16,7 +16,7 @@ public class ProjectileScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log(GetComponent<Rigidbody>().velocity);
     }
 
     private void OnTriggerEnter(Collider other)
