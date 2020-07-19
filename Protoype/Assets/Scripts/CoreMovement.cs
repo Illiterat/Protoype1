@@ -12,9 +12,11 @@ public class CoreMovement : MonoBehaviour
 
     public DamageAndHealthValues valueScipt; // accessing the DamageAndHealthValues script
     public TileTriggerScript currentSpace;
+    public float movementSpeed;
 
     public List<GameObject> spacesInput = new List<GameObject>(); //For taking the objects in from the inspector
     public GameObject[,] spaces = new GameObject[3, 3]; //The array of possitions
+    public GameObject playerDestination;
     public GameObject player;
 
     int currentX; //Current X position in array.
@@ -51,7 +53,7 @@ public class CoreMovement : MonoBehaviour
             //Set the starting point for the player. (at the moment coordinate 1,1)
             currentX = 1;
             currentY = 1;
-            player.transform.position = spaces[currentX, currentY].transform.position;
+            playerDestination.transform.position = spaces[currentX, currentY].transform.position;
         }
 
         //Adds our stored keys to the dictionary
@@ -67,6 +69,7 @@ public class CoreMovement : MonoBehaviour
     void Update()
     {
         CheckForActivation();
+        player.transform.position = Vector3.Lerp(player.transform.position, playerDestination.transform.position, movementSpeed * Time.deltaTime);
 
         if (Input.GetKeyDown(keys["Right"])) //Right movement
         {
@@ -75,7 +78,7 @@ public class CoreMovement : MonoBehaviour
             {
                 currentX++; //Update variable representing it's position
                 //Move the player
-                player.transform.position = spaces[currentX, currentY].transform.position;
+                playerDestination.transform.position = spaces[currentX, currentY].transform.position;
                 //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
             }
         }
@@ -84,7 +87,7 @@ public class CoreMovement : MonoBehaviour
             if (currentX - 1 >= 0)
             {
                 currentX--;
-                player.transform.position = spaces[currentX, currentY].transform.position;
+                playerDestination.transform.position = spaces[currentX, currentY].transform.position;
                 //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
             }
         }
@@ -93,7 +96,7 @@ public class CoreMovement : MonoBehaviour
             if (currentY - 1 >= 0)
             {
                 currentY--;
-                player.transform.position = spaces[currentX, currentY].transform.position;
+                playerDestination.transform.position = spaces[currentX, currentY].transform.position;
                 //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
             }
         }
@@ -102,7 +105,7 @@ public class CoreMovement : MonoBehaviour
             if (currentY + 1 < spacesY)
             {
                 currentY++;
-                player.transform.position = spaces[currentX, currentY].transform.position;
+                playerDestination.transform.position = spaces[currentX, currentY].transform.position;
                 //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
             }
         }
