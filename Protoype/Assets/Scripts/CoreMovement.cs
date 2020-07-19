@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CoreMovement : MonoBehaviour
 {
+    //Dictionary for storing keybinds
+    private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
+
     public int spacesY = 3; //Size of array Columns
     public int spacesX = 3; //Size of array Rows
 
@@ -50,6 +53,14 @@ public class CoreMovement : MonoBehaviour
             currentY = 1;
             player.transform.position = spaces[currentX, currentY].transform.position;
         }
+
+        //Adds our stored keys to the dictionary
+        //This will need to be done again if the player changes keybinds during game
+        keys.Add("Up", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Up", "W")));
+        keys.Add("Down", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Down", "S")));
+        keys.Add("Left", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Left", "A")));
+        keys.Add("Right", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Right", "D")));
+
     }
 
     // Update is called once per frame
@@ -57,7 +68,7 @@ public class CoreMovement : MonoBehaviour
     {
         CheckForActivation();
 
-        if (Input.GetKeyDown(KeyCode.D)) //Right movement
+        if (Input.GetKeyDown(keys["Right"])) //Right movement
         {
             //Check if space to move to exists
             if (currentX + 1 < spacesX)
@@ -68,7 +79,7 @@ public class CoreMovement : MonoBehaviour
                 //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
             }
         }
-        else if (Input.GetKeyDown(KeyCode.A)) //Left movement
+        else if (Input.GetKeyDown(keys["Left"])) //Left movement
         {
             if (currentX - 1 >= 0)
             {
@@ -77,7 +88,7 @@ public class CoreMovement : MonoBehaviour
                 //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
             }
         }
-        else if (Input.GetKeyDown(KeyCode.W)) //Up movement
+        else if (Input.GetKeyDown(keys["Up"])) //Up movement
         {
             if (currentY - 1 >= 0)
             {
@@ -86,7 +97,7 @@ public class CoreMovement : MonoBehaviour
                 //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
             }
         }
-        else if (Input.GetKeyDown(KeyCode.S)) //Down movement
+        else if (Input.GetKeyDown(keys["Down"])) //Down movement
         {
             if (currentY + 1 < spacesY)
             {
