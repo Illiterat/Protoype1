@@ -29,14 +29,10 @@ public class DamageAndHealthValues : MonoBehaviour
             return;
         }
 
-        if (bossHealth == 0 || bossHealth <= 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // loading the 'win' scene when the boss's health goes below 0
-        }
 
         if (playerHealth == 0 || playerHealth <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // loading the 'win' scene when the boss's health goes below 0
+            SceneManager.LoadScene(0); // loading the 'start' scene when the boss's health goes below 0
         }
 
     }
@@ -46,5 +42,7 @@ public class DamageAndHealthValues : MonoBehaviour
         bossHealth -= playerDamage;
         playerDamage = 0;  // resetting player damage
         Phase.damage = false; //Not damaging the boss a second time
+        
     }
-}
+
+ }
