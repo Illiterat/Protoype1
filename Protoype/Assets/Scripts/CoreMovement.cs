@@ -110,7 +110,7 @@ public class CoreMovement : MonoBehaviour
             }
         }
     }
-
+    //Mwahahahahah I am saying something
     void CheckForActivation()
     {
        currentSpace = spaces[currentX, currentY].GetComponent<TileTriggerScript>();
