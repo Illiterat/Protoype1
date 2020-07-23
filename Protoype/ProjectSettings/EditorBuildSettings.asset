@@ -6,13 +6,43 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Start.unity
+    path: Assets/Scenes/Start Menu.unity
     guid: 2e9aa3b096a3c884f9a9e5b2a35fcd84
   - enabled: 1
-    path: Assets/Scenes/FightScene.unity
+    path: Assets/Scenes/Introduction.unity
+    guid: 0ef411c1c12b50d45aa9313907263965
+  - enabled: 1
+    path: Assets/Scenes/1st Boss Fight.unity
     guid: fe5a3c6cf895dee469bb566b751effae
   - enabled: 1
-    path: Assets/Scenes/Win.unity
+    path: Assets/Scenes/Cutscene 1.unity
+    guid: ddbbcfe0bac1e3347b4130d07eb5581d
+  - enabled: 1
+    path: Assets/Scenes/2nd Boss Fight.unity
+    guid: e8201a2f3721bda4a87d3475b2b2244f
+  - enabled: 1
+    path: Assets/Scenes/Cutscene 2.unity
+    guid: cd1082db7ca899548b4eaaf568898e2f
+  - enabled: 1
+    path: Assets/Scenes/3rd Boss Fight.unity
+    guid: f5c2be55afe24e340b230ffdb75803cb
+  - enabled: 1
+    path: Assets/Scenes/Cutscene 3.unity
+    guid: f4ee99ca279995941b5b84b9abfd4d3b
+  - enabled: 1
+    path: Assets/Scenes/4th Boss Fight.unity
+    guid: b74c50b3f186b3d42b00fcf26bcc8b51
+  - enabled: 1
+    path: Assets/Scenes/Cutscene 4.unity
+    guid: 791dd488d80f68b4388387d416d88f71
+  - enabled: 1
+    path: Assets/Scenes/5th Boss Fight.unity
+    guid: 6ee05e1f04e752f45a7164a57ffe2cf6
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 81f54342d3a5521419114a35c8d2bc7a
+  - enabled: 1
+    path: Assets/Scenes/Game Win.unity
     guid: c7537ca334ff1bf48a9a9c48a4408cb3
   - enabled: 1
     path: Assets/Scenes/ControlsMenu.unity

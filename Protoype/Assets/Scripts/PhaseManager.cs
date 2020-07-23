@@ -2,31 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PhaseManager : MonoBehaviour
 {
     public int phase; // int for Phasemanagement
-
-    public List<GameObject> tiles = new List<GameObject>(); //List of tiles for activation
+    int bossPhase; // int for bossphase
+    public int randomiser; //Variable for picking a random bool outcome for tiles.
 
     private bool isCoroutineExecuting = false;
+    private bool isSecondaryCoroutineExecuting = false;
     public bool damage;
-
-    public int randomiser; //Variable for picking a random bool outcome for tiles.
 
     public GameObject projectile;
     public GameObject speedSlider; //Slider to change projectile speed at runtime.
     [Range(1.0f, 50.0f)]
+
     public float fireSpeed;
     private float timeModifier; //Modifier used to change times between launching projectiles
     public float launchTimeModifier; //Amount of projectiles that are shot before the first one reaches the middle of the players tiles
 
     public List<GameObject> emitters = new List<GameObject>();
+    public List<GameObject> tiles = new List<GameObject>(); //List of tiles for activation
 
+    public DamageAndHealthValues health;
 
     private void Start()
     {
         phase = 1; //starting phase
+        bossPhase = 1; //starting phase
         damage = false;
         speedSlider.GetComponent<Slider>().value = fireSpeed;
     }
@@ -73,36 +77,14 @@ public class PhaseManager : MonoBehaviour
         {
             TileTriggerScript tileScript;
             tileScript = tile.GetComponent<TileTriggerScript>();
-            
+
             tileScript.render.sharedMaterial = tileScript.color[0];
             tileScript.activated = false;
         }
 
-        //Example pattern
-        
-        Launch(emitters[0]);
-        yield return new WaitForSeconds(timeModifier/launchTimeModifier);
-        Launch(emitters[1]);
-        yield return new WaitForSeconds(timeModifier/launchTimeModifier);
-        Launch(emitters[2]);
-        yield return new WaitForSeconds(timeModifier/launchTimeModifier);
-        Launch(emitters[1]);
-         yield return new WaitForSeconds(timeModifier/launchTimeModifier);
-        Launch(emitters[0]);
-        yield return new WaitForSeconds(timeModifier/launchTimeModifier);
-        Launch(emitters[0]);
-        yield return new WaitForSeconds(timeModifier/launchTimeModifier);
-        Launch(emitters[1]);
-        yield return new WaitForSeconds(timeModifier/launchTimeModifier);
-        Launch(emitters[2]);
-        yield return new WaitForSeconds(timeModifier/launchTimeModifier);
-        Launch(emitters[1]);
-        yield return new WaitForSeconds(timeModifier/launchTimeModifier);
-        Launch(emitters[0]);
+        BossPhaseManagement(); //calling Boss phase attack stuff
 
-        //End example pattern
-
-        yield return new WaitForSeconds(1); //phase lasts 10 seconds (I deducted the amount used in the firing of projectiles)
+        yield return new WaitForSeconds(10); //phase lasts 10 seconds
         phase = 2; //moving to Attack Phase
         isCoroutineExecuting = false; //saying a coroutine is no longer running
     }
@@ -139,5 +121,107 @@ public class PhaseManager : MonoBehaviour
         isCoroutineExecuting = false; //saying a coroutine is no longer running
     }
 
+    void BossPhaseManagement() //Switch statement to navigate phases
+    {
+        switch (bossPhase)
+        {
+            case 1:
+                StartCoroutine(Phase1());
+                break;
 
+            case 2:
+                StartCoroutine(Phase2());
+                break;
+
+            case 3:
+                StartCoroutine(Phase3());
+                break;
+
+            case 4:
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // loading the next scene when the boss's health goes below 0
+                break;
+
+            default:
+                print("Wrong Int");
+                break;
+        }
+    }
+
+    public IEnumerator Phase1()
+    {
+        if (isSecondaryCoroutineExecuting) //checking to see if another coroutine is running before moving on
+            yield break;
+
+        isSecondaryCoroutineExecuting = true; //saying a coroutine is running
+
+        if (health.bossHealth <= 20)
+        {
+            bossPhase = 2;
+        }
+
+        //INSERT PHASE 1 ATTACK STUFF
+
+        //Example pattern
+
+        Launch(emitters[0]);
+        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
+        Launch(emitters[1]);
+        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
+        Launch(emitters[2]);
+        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
+        Launch(emitters[1]);
+        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
+        Launch(emitters[0]);
+        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
+        Launch(emitters[0]);
+        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
+        Launch(emitters[1]);
+        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
+        Launch(emitters[2]);
+        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
+        Launch(emitters[1]);
+        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
+        Launch(emitters[0]);
+
+        //End example pattern
+        
+        isSecondaryCoroutineExecuting = false; //saying a coroutine is no longer running
+    }
+
+    public IEnumerator Phase2()
+    {
+        if (isSecondaryCoroutineExecuting) //checking to see if another coroutine is running before moving on
+            yield break;
+
+        if (health.bossHealth <= 10)
+        {
+            bossPhase = 3;
+        }
+
+
+        isSecondaryCoroutineExecuting = true; //saying a coroutine is running
+
+        //INSERT PHASE 2 ATTACK STUFF
+
+       
+        isSecondaryCoroutineExecuting = false; //saying a coroutine is no longer running
+    }
+
+    public IEnumerator Phase3()
+    {
+        if (isSecondaryCoroutineExecuting) //checking to see if another coroutine is running before moving on
+            yield break;
+
+        isSecondaryCoroutineExecuting = true; //saying a coroutine is running
+
+        if (health.bossHealth == 0 || health.bossHealth <= 0)
+        {
+            bossPhase = 4;
+        }
+
+        //INSERT PHASE 3 ATTACK STUFF
+
+
+        isSecondaryCoroutineExecuting = false; //saying a coroutine is no longer running
+    }
 }
