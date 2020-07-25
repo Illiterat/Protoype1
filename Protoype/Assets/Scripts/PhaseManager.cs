@@ -63,7 +63,7 @@ public class PhaseManager : MonoBehaviour
     private void Launch(GameObject emitter)
     {
         GameObject projectileClone = Instantiate(projectile, emitter.transform.position, emitter.transform.rotation);
-        projectileClone.GetComponent<Rigidbody>().velocity = -transform.right * fireSpeed;
+        projectileClone.GetComponent<Rigidbody2D>().velocity = -transform.right * fireSpeed;
     }
 
     public IEnumerator DodgePhase()
