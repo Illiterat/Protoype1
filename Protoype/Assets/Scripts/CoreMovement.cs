@@ -19,6 +19,9 @@ public class CoreMovement : MonoBehaviour
     public GameObject playerDestination;
     public GameObject player;
 
+    public AudioClip move;
+    public AudioSource source;
+
     int currentX; //Current X position in array.
     int currentY; //Current Y position in array.
 
@@ -63,6 +66,9 @@ public class CoreMovement : MonoBehaviour
         keys.Add("Left", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Left", "A")));
         keys.Add("Right", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Right", "D")));
 
+        move = Resources.Load<AudioClip>("Player Movement");
+        source = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -79,6 +85,7 @@ public class CoreMovement : MonoBehaviour
                 currentX++; //Update variable representing it's position
                 //Move the player
                 playerDestination.transform.position = spaces[currentX, currentY].transform.position;
+                source.PlayOneShot(move);
                 //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
             }
         }
@@ -88,6 +95,7 @@ public class CoreMovement : MonoBehaviour
             {
                 currentX--;
                 playerDestination.transform.position = spaces[currentX, currentY].transform.position;
+                source.PlayOneShot(move);
                 //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
             }
         }
@@ -97,6 +105,7 @@ public class CoreMovement : MonoBehaviour
             {
                 currentY--;
                 playerDestination.transform.position = spaces[currentX, currentY].transform.position;
+                source.PlayOneShot(move);
                 //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
             }
         }
@@ -106,6 +115,7 @@ public class CoreMovement : MonoBehaviour
             {
                 currentY++;
                 playerDestination.transform.position = spaces[currentX, currentY].transform.position;
+                source.PlayOneShot(move);
                 //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
             }
         }
@@ -118,7 +128,8 @@ public class CoreMovement : MonoBehaviour
        if(currentSpace.activated == true)
         {
             valueScipt.playerDamage++; // increasing the players damage
-            currentSpace.render.sharedMaterial = currentSpace.color[0];
+            currentSpace.source.PlayOneShot(currentSpace.deactivation);
+            currentSpace.render.sprite = currentSpace.color[0];
             currentSpace.activated = false;
         }
     }

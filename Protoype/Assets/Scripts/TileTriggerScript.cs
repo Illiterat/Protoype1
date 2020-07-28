@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class TileTriggerScript : MonoBehaviour
 {
+    public AudioClip deactivation;
+    public AudioSource source;
 
     public bool activated; // a few local variables for tracking on individual tiles in the array
 
-    public Material[] color; 
-    public Renderer render;
+    public Sprite[] color; 
+    public SpriteRenderer render;
 
     private void Start()
     {
+        deactivation = Resources.Load<AudioClip>("Player Stepping on Activated Platforms");
+        source = GetComponent<AudioSource>();
         activated = false;
-         render = GetComponent<Renderer>(); //setting starting values for the variables
+        render = GetComponent<SpriteRenderer>(); //setting starting values for the variables
         render.enabled = true;
-        render.sharedMaterial = color[0];
+        render.sprite = color[0];
     }
    
+   
+
 }

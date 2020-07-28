@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class PhaseManager : MonoBehaviour
 {
+    public AudioClip projectileLaunch;
+    public AudioSource source;
+
     public int phase; // int for Phasemanagement
     int bossPhase; // int for bossphase
     public int randomiser; //Variable for picking a random bool outcome for tiles.
@@ -29,6 +32,7 @@ public class PhaseManager : MonoBehaviour
 
     private void Start()
     {
+        projectileLaunch = Resources.Load<AudioClip>("Projectile Launch");
         phase = 1; //starting phase
         bossPhase = 1; //starting phase
         damage = false;
@@ -62,6 +66,7 @@ public class PhaseManager : MonoBehaviour
 
     private void Launch(GameObject emitter)
     {
+        source.PlayOneShot(projectileLaunch);
         GameObject projectileClone = Instantiate(projectile, emitter.transform.position, emitter.transform.rotation);
         projectileClone.GetComponent<Rigidbody2D>().velocity = -transform.right * fireSpeed;
     }
@@ -78,8 +83,13 @@ public class PhaseManager : MonoBehaviour
             TileTriggerScript tileScript;
             tileScript = tile.GetComponent<TileTriggerScript>();
 
-            tileScript.render.sharedMaterial = tileScript.color[0];
+            tileScript.render.sprite = tileScript.color[0];
             tileScript.activated = false;
+        }
+
+        foreach (GameObject emitter in emitters)
+        {
+            source = emitter.GetComponent<AudioSource>();
         }
 
         BossPhaseManagement(); //calling Boss phase attack stuff
@@ -105,12 +115,12 @@ public class PhaseManager : MonoBehaviour
 
             if(randomiser == 2)
             {
-                tileScript.render.sharedMaterial = tileScript.color[1]; //activating the tile
+                tileScript.render.sprite = tileScript.color[1]; //activating the tile
                 tileScript.activated = true;
             }
             else if (randomiser == 1)
             {
-                tileScript.render.sharedMaterial = tileScript.color[0]; //not activating the tile
+                tileScript.render.sprite = tileScript.color[0]; //not activating the tile
                 tileScript.activated = false;
             }
         }
