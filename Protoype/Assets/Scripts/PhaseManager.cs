@@ -27,6 +27,7 @@ public class PhaseManager : MonoBehaviour
 
     public List<GameObject> emitters = new List<GameObject>();
     public List<GameObject> tiles = new List<GameObject>(); //List of tiles for activation
+    List<PatternSuper> patterns = new List<PatternSuper>();
 
     public DamageAndHealthValues health;
 
@@ -37,13 +38,31 @@ public class PhaseManager : MonoBehaviour
         bossPhase = 1; //starting phase
         damage = false;
         speedSlider.GetComponent<Slider>().value = fireSpeed;
+
+        PatternSuper[] patterns = GetComponents<PatternSuper>();
+
+        foreach (PatternSuper p in patterns)
+        {
+            p.emitters = this.emitters;
+            p.tiles = this.tiles;
+            p.fireSpeed = fireSpeed;
+            this.patterns.Add(p);
+        }
+
     }
 
     void Update()
     {
         fireSpeed = speedSlider.GetComponent<Slider>().value;
         timeModifier = 14/fireSpeed; //Time it takes for a projectile to reach the centre of the players grid
+        
         PhaseManagement(); // calling switch statement
+
+
+
+        ///Testing
+        patterns[0].waitTime = timeModifier / launchTimeModifier;
+        patterns[0].fireSpeed = fireSpeed;
     }
 
     void PhaseManagement() //Switch statement to navigate phases
@@ -172,27 +191,11 @@ public class PhaseManager : MonoBehaviour
         //INSERT PHASE 1 ATTACK STUFF
 
         //Example pattern
+        Debug.Log("Time in phasemanager: " + timeModifier / launchTimeModifier);
 
-        Launch(emitters[0]);
-        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
-        Launch(emitters[1]);
-        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
-        Launch(emitters[2]);
-        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
-        Launch(emitters[1]);
-        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
-        Launch(emitters[0]);
-        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
-        Launch(emitters[0]);
-        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
-        Launch(emitters[1]);
-        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
-        Launch(emitters[2]);
-        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
-        Launch(emitters[1]);
-        yield return new WaitForSeconds(timeModifier / launchTimeModifier);
-        Launch(emitters[0]);
-
+        
+        Debug.Log(patterns[0].fireSpeed);
+        yield return StartCoroutine(patterns[0].Begin(emitters[1]));
         //End example pattern
         
         isSecondaryCoroutineExecuting = false; //saying a coroutine is no longer running

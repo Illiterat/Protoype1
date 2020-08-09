@@ -5,14 +5,14 @@ using UnityEngine;
 //Interface describing a function for activating a pattern.
 public interface PatternInterface
 {
-    float firespeed{ get; set;}
+    float fireSpeed{ get; set;}
     void Begin();
 }
 
 
 public interface AttackInterface
 {
-    float firespeed {get; set;}
+    float fireSpeed {get; set;}
     void Use();
 }
 
