@@ -16,8 +16,6 @@ public class KeybindManagerScript : MonoBehaviour
 
     private Color32 normal = Color.white;
     private Color32 selected = new Color32(170, 231, 243, 255); //light blue
-
-    public GameObject warningMessage;
     #endregion
 
     #region Methods
@@ -25,9 +23,6 @@ public class KeybindManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Make sure the warning message isn't displaying
-        warningMessage.SetActive(false);
-
         //Add the saved PlayerPrefs for the keys to the Dictionary OR use the default values if there's nothing saved
         keys.Add("Up", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Up", "W")));
         keys.Add("Down", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Down", "S")));
@@ -127,14 +122,15 @@ public class KeybindManagerScript : MonoBehaviour
 
     public void ExitKeybindMenu()
     {
-        //if current values do NOT equal player prefs, do some stuff
+        //if current values do NOT equal player prefs, save the new values
         if (keys["Up"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Up", "W"))
             || keys["Down"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Down", "S"))
             || keys["Left"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Left", "A"))
             || keys["Right"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Right", "D"))
             )
         {
-            warningMessage.SetActive(true);
+            SaveKeys();
+            SceneManager.LoadScene(0);
         }
 
         else
@@ -148,16 +144,6 @@ public class KeybindManagerScript : MonoBehaviour
     {
         SaveKeys();
         SceneManager.LoadScene(0);
-    }
-
-    public void ContinueWithoutSaving()
-    {
-        SceneManager.LoadScene(0);
-    }
-
-    public void SetWarningInactive()
-    {
-        warningMessage.SetActive(false);
     }
     #endregion
 }
