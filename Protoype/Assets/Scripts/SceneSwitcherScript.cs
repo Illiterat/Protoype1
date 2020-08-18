@@ -13,7 +13,12 @@ public class SceneSwitcherScript : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Will load player into next scene, only works in menu
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Will load player into next scene, (only works in menu)
+    }
+
+    public void QuitGame() // Will quit the game (only works in menu)
+    {
+        Application.Quit();
     }
 
     public void RestartGame()
@@ -21,16 +26,11 @@ public class SceneSwitcherScript : MonoBehaviour
         SceneManager.LoadScene(0); //Will also load player into menu scene, only works in win screen
     }
 
-    public void GotoKeybindsMenu()
-    {
-        SceneManager.LoadScene(3);
-    }
-
     public void NextScene()
     {
         if(Input.GetKey(KeyCode.Space))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Will load player into next scene
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Will load player into next scene - REMOVE BEFORE FINAL BUILD (WORKS EVERYWHERE)
         }
     }
 }
