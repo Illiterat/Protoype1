@@ -13,7 +13,6 @@ public class PatternSuper : MonoBehaviour
 {
     public float fireSpeed;
     public float waitTime;
-    public int phase;
     public List<GameObject> emitters = new List<GameObject>();
     public List<GameObject> tiles = new List<GameObject>();
 
@@ -29,7 +28,7 @@ public class PatternSuper : MonoBehaviour
         
     }
 
-    public virtual IEnumerator Begin()
+    public virtual IEnumerator Begin(GameObject emitter)
     {
         //Testing to see if I can overide this functionality in the subclasses
         Debug.Log("This shouldn't display");

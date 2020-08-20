@@ -27,9 +27,7 @@ public class PhaseManager : MonoBehaviour
 
     public List<GameObject> emitters = new List<GameObject>();
     public List<GameObject> tiles = new List<GameObject>(); //List of tiles for activation
-    List<PatternSuper> patternsPhase1 = new List<PatternSuper>();
-    List<PatternSuper> patternsPhase2 = new List<PatternSuper>();
-    List<PatternSuper> patternsPhase3 = new List<PatternSuper>();
+    List<PatternSuper> patterns = new List<PatternSuper>();
 
     public DamageAndHealthValues health;
 
@@ -48,30 +46,7 @@ public class PhaseManager : MonoBehaviour
             p.emitters = this.emitters;
             p.tiles = this.tiles;
             p.fireSpeed = fireSpeed;
-            switch(p.phase)
-            {
-                case 1:
-                {
-                    this.patternsPhase1.Add(p);
-                    break;
-                }
-                case 2:
-                {
-                    this.patternsPhase2.Add(p);
-                    break;
-                }
-                case 3:
-                {
-                    this.patternsPhase3.Add(p);
-                    break;
-                }
-                default:
-                {
-                    Debug.Log("It apears the phase in this pattern was entered incorrectly: " + p.GetType().Name + " With phase number: " + p.phase); //Print the name of any incorrectly set phase variables.
-                    break;
-                }
-            }
-            
+            this.patterns.Add(p);
         }
 
     }
@@ -83,23 +58,11 @@ public class PhaseManager : MonoBehaviour
         
         PhaseManagement(); // calling switch statement
 
-        //For context this accesses the patterns list not the patterns array in Start()
-        foreach (PatternSuper p in patternsPhase1)
-        {
-            p.waitTime = timeModifier / launchTimeModifier;
-            p.fireSpeed = fireSpeed;
-        }
-        foreach (PatternSuper p in patternsPhase2)
-        {
-            p.waitTime = timeModifier / launchTimeModifier;
-            p.fireSpeed = fireSpeed;
-        }
-        foreach (PatternSuper p in patternsPhase3)
-        {
-            p.waitTime = timeModifier / launchTimeModifier;
-            p.fireSpeed = fireSpeed;
-        }
-        
+
+
+        ///Testing
+        patterns[0].waitTime = timeModifier / launchTimeModifier;
+        patterns[0].fireSpeed = fireSpeed;
     }
 
     void PhaseManagement() //Switch statement to navigate phases
@@ -162,7 +125,7 @@ public class PhaseManager : MonoBehaviour
 
         isCoroutineExecuting = true; //saying a coroutine is running
 
-        foreach (GameObject tile in tiles)
+        foreach (GameObject tile in tiles )
         {
             TileTriggerScript tileScript; //grabbing individual tile scripts
             tileScript = tile.GetComponent<TileTriggerScript>();
@@ -215,18 +178,6 @@ public class PhaseManager : MonoBehaviour
 
     public IEnumerator Phase1()
     {
-        int randomPattern = -1;
-        if(patternsPhase1.Count != 0)
-        {
-            randomPattern = Random.Range(0, patternsPhase1.Count);
-        }
-        else
-        {
-            Debug.Log("Pattern list is empty");
-        }
-        
-
-
         if (isSecondaryCoroutineExecuting) //checking to see if another coroutine is running before moving on
             yield break;
 
@@ -240,15 +191,11 @@ public class PhaseManager : MonoBehaviour
         //INSERT PHASE 1 ATTACK STUFF
 
         //Example pattern
-        //Debug.Log("Time in phasemanager: " + timeModifier / launchTimeModifier);
+        Debug.Log("Time in phasemanager: " + timeModifier / launchTimeModifier);
 
         
-        //Debug.Log(patternsPhase1[0].fireSpeed);
-        if(randomPattern >= 0)
-        {
-            yield return StartCoroutine(patternsPhase1[randomPattern].Begin());
-        }
-        
+        Debug.Log(patterns[0].fireSpeed);
+        yield return StartCoroutine(patterns[0].Begin(emitters[1]));
         //End example pattern
         
         isSecondaryCoroutineExecuting = false; //saying a coroutine is no longer running
