@@ -8,6 +8,10 @@ public class T_1_1 : PatternSuper
     public OrangeBall orangeAttack;
     public GameObject ball;
 
+    void Awake()
+    {
+        phase = 1;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +20,7 @@ public class T_1_1 : PatternSuper
         //ball firespeed
         
         orangeAttack.projectile = this.ball;
-        
+        phase = 1;
     }
 
     // Update is called once per frame
@@ -27,7 +31,7 @@ public class T_1_1 : PatternSuper
 
 
     //The word "override" here lets me re-write what the function does
-    public override IEnumerator Begin(GameObject emitter)
+    public override IEnumerator Begin()
     {
         Debug.Log("Wait time inside pattern" + waitTime);
         yield return new WaitForSeconds(waitTime);
