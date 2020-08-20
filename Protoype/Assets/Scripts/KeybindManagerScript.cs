@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class KeybindManagerScript : MonoBehaviour
 {
@@ -10,24 +11,21 @@ public class KeybindManagerScript : MonoBehaviour
     //Dictionary for storing keybinds
     private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
 
-    public Text upText, leftText, downText, rightText; //Accessing text on menu buttons
+    public TextMeshProUGUI upText, leftText, downText, rightText; //Accessing text on menu buttons
 
     private GameObject currentKey;
 
     private Color32 normal = Color.white;
     private Color32 selected = new Color32(170, 231, 243, 255); //light blue
-
-    public GameObject warningMessage;
     #endregion
 
     #region Methods
     #region UnityMethods
+
     // Start is called before the first frame update
     void Start()
     {
-        //Make sure the warning message isn't displaying
-        warningMessage.SetActive(false);
-
+        
         //Add the saved PlayerPrefs for the keys to the Dictionary OR use the default values if there's nothing saved
         keys.Add("Up", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Up", "W")));
         keys.Add("Down", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Down", "S")));
@@ -39,6 +37,7 @@ public class KeybindManagerScript : MonoBehaviour
         downText.text = keys["Down"].ToString();
         leftText.text = keys["Left"].ToString();
         rightText.text = keys["Right"].ToString();
+        
     }
 
     private void OnGUI()
@@ -60,7 +59,7 @@ public class KeybindManagerScript : MonoBehaviour
                 //Change the currentKey's name to the key that was just pressed
                 keys[currentKey.name] = e.keyCode;
                 //Change the text to match the new name
-                currentKey.transform.GetChild(0).GetComponent<Text>().text = e.keyCode.ToString();
+                currentKey.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = e.keyCode.ToString();
                 //Changes the currentKey color back to normal
                 currentKey.GetComponent<Image>().color = normal;
 
@@ -127,37 +126,21 @@ public class KeybindManagerScript : MonoBehaviour
 
     public void ExitKeybindMenu()
     {
-        //if current values do NOT equal player prefs, do some stuff
+        //if current values do NOT equal player prefs, save the new values
         if (keys["Up"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Up", "W"))
             || keys["Down"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Down", "S"))
             || keys["Left"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Left", "A"))
             || keys["Right"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Right", "D"))
             )
         {
-            warningMessage.SetActive(true);
+            SaveKeys();
         }
 
-        else
-        {
-            //if current values MATCH player prefs, go straight to start
-            SceneManager.LoadScene(0); //Goes to start Menu 
-        }
     }
 
     public void SaveAndContinue()
     {
         SaveKeys();
-        SceneManager.LoadScene(0);
-    }
-
-    public void ContinueWithoutSaving()
-    {
-        SceneManager.LoadScene(0);
-    }
-
-    public void SetWarningInactive()
-    {
-        warningMessage.SetActive(false);
     }
     #endregion
 }
