@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":244.47247314453126,"y":206.30442810058595,"z":-247.125},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":279.2013244628906,"orthographic":true}
 =======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":19.018213272094728,"y":-3.667736053466797,"z":-3.8433775901794435},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":27.135679244995118,"orthographic":true}
 >>>>>>> parent of c4ec145... Merge fixing
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":19.428251266479493,"y":-3.2947146892547609,"z":-4.578635215759277},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":28.18486785888672,"orthographic":true}
+>>>>>>> parent of b812d94... Merge branch 'master' of https://github.com/Illiterat/Protoype1
