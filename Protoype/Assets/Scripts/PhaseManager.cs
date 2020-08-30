@@ -27,7 +27,9 @@ public class PhaseManager : MonoBehaviour
 
     public List<GameObject> emitters = new List<GameObject>();
     public List<GameObject> tiles = new List<GameObject>(); //List of tiles for activation
-    List<PatternSuper> patterns = new List<PatternSuper>();
+    List<PatternSuper> patternsPhase1 = new List<PatternSuper>();
+    List<PatternSuper> patternsPhase2 = new List<PatternSuper>();
+    List<PatternSuper> patternsPhase3 = new List<PatternSuper>();
 
     public DamageAndHealthValues health;
 
@@ -46,7 +48,29 @@ public class PhaseManager : MonoBehaviour
             p.emitters = this.emitters;
             p.tiles = this.tiles;
             p.fireSpeed = fireSpeed;
-            this.patterns.Add(p);
+            switch(p.phase)
+            {
+                case 1:
+                {
+                    this.patternsPhase1.Add(p);
+                    break;
+                }
+                case 2:
+                {
+                    this.patternsPhase2.Add(p);
+                    break;
+                }
+                case 3:
+                {
+                    this.patternsPhase3.Add(p);
+                    break;
+                }
+                default:
+                {
+                    Debug.Log("This shouldn't appear");
+                    break;
+                }
+            }
         }
 
     }
@@ -61,8 +85,8 @@ public class PhaseManager : MonoBehaviour
 
 
         ///Testing
-        patterns[0].waitTime = timeModifier / launchTimeModifier;
-        patterns[0].fireSpeed = fireSpeed;
+        //patterns[0].waitTime = timeModifier / launchTimeModifier;
+        //patterns[0].fireSpeed = fireSpeed;
     }
 
     void PhaseManagement() //Switch statement to navigate phases
@@ -190,12 +214,9 @@ public class PhaseManager : MonoBehaviour
 
         //INSERT PHASE 1 ATTACK STUFF
 
-        //Example pattern
-        Debug.Log("Time in phasemanager: " + timeModifier / launchTimeModifier);
-
+        int randomInt = Random.Range(0, patternsPhase1.Count);
         
-        Debug.Log(patterns[0].fireSpeed);
-        yield return StartCoroutine(patterns[0].Begin(emitters[1]));
+        yield return StartCoroutine(patternsPhase1[randomInt].Begin(emitters[1]));
         //End example pattern
         
         isSecondaryCoroutineExecuting = false; //saying a coroutine is no longer running
