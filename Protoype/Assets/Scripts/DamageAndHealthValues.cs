@@ -20,7 +20,7 @@ public class DamageAndHealthValues : MonoBehaviour
         GameObject Boss = GameObject.FindWithTag("Boss");
         source = Boss.GetComponent<AudioSource>();
         playerDamage = 0;  // starting values for variables
-        playerHealth = 5;
+        SetHealth();
         bossHealth = 30;
     }
 
@@ -41,6 +41,11 @@ public class DamageAndHealthValues : MonoBehaviour
             SceneManager.LoadScene(0); // loading the 'start' scene when the boss's health goes below 0
         }
 
+    }
+
+    void SetHealth()
+    {
+        playerHealth = 5 + PlayerPrefs.GetInt("health", 0);
     }
 
     void DamageBoss()  // when triggered will reduce the boss health by the player damage

@@ -11,7 +11,9 @@ public class OptionsMenu : MonoBehaviour
     public AudioConfiguration Config;
 
     public TMP_Dropdown resolutionDropdown;
-   // public TextMeshProUGUI resolutionDropdown;
+    public Slider playerHealth, attackSpeed, turnTime;
+    public float speed;
+    public int health, time;
 
     Resolution[] resolutions;
 
@@ -37,6 +39,24 @@ public class OptionsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+    }
+
+    public void SetGameplay()
+    {
+        health = (int)playerHealth.value;
+        speed = attackSpeed.value;
+        time = (int)turnTime.value;
+
+        PlayerPrefs.SetInt("health", health);
+        PlayerPrefs.SetInt("time", time);
+        PlayerPrefs.SetFloat("speed", speed);
+
+        PlayerPrefs.Save();
+    }
+
+    public void ExitGameplayMenu()
+    {
+        SetGameplay();
     }
 
     public void SetMasterVolume (float MasterVolume)

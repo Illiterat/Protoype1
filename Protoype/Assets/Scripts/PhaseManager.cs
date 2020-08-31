@@ -12,6 +12,7 @@ public class PhaseManager : MonoBehaviour
     public int phase; // int for Phasemanagement
     int bossPhase; // int for bossphase
     public int randomiser; //Variable for picking a random bool outcome for tiles.
+    public int time;
 
     private bool isCoroutineExecuting = false;
     private bool isSecondaryCoroutineExecuting = false;
@@ -49,11 +50,12 @@ public class PhaseManager : MonoBehaviour
             this.patterns.Add(p);
         }
 
+        SetTime();
     }
 
     void Update()
     {
-        fireSpeed = speedSlider.GetComponent<Slider>().value;
+        fireSpeed = PlayerPrefs.GetFloat("speed", 0);
         timeModifier = 14/fireSpeed; //Time it takes for a projectile to reach the centre of the players grid
         
         PhaseManagement(); // calling switch statement
@@ -63,6 +65,11 @@ public class PhaseManager : MonoBehaviour
         ///Testing
         patterns[0].waitTime = timeModifier / launchTimeModifier;
         patterns[0].fireSpeed = fireSpeed;
+    }
+
+    void SetTime()
+    {
+        time = PlayerPrefs.GetInt("time", 0);
     }
 
     void PhaseManagement() //Switch statement to navigate phases
@@ -144,7 +151,7 @@ public class PhaseManager : MonoBehaviour
             }
         }
 
-        yield return new WaitForSeconds(2); //phase lasts 2 seconds
+        yield return new WaitForSeconds(time); //phase lasts 2 seconds
         damage = true;
         phase = 1; //moving to the damage phase
         isCoroutineExecuting = false; //saying a coroutine is no longer running
