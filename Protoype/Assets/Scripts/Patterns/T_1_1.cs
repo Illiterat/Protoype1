@@ -12,6 +12,8 @@ public class T_1_1 : PatternSuper
     // Start is called before the first frame update
     void Start()
     {
+        phase = 1; //Set the phase for this attack
+        
         orangeAttack = gameObject.AddComponent<OrangeBall>();
         //ball firespeed
         

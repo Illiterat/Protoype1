@@ -28,7 +28,9 @@ public class PhaseManager : MonoBehaviour
 
     public List<GameObject> emitters = new List<GameObject>();
     public List<GameObject> tiles = new List<GameObject>(); //List of tiles for activation
-    List<PatternSuper> patterns = new List<PatternSuper>();
+    List<PatternSuper> patternsPhase1 = new List<PatternSuper>();
+    List<PatternSuper> patternsPhase2 = new List<PatternSuper>();
+    List<PatternSuper> patternsPhase3 = new List<PatternSuper>();
 
     public DamageAndHealthValues health;
 
@@ -47,7 +49,25 @@ public class PhaseManager : MonoBehaviour
             p.emitters = this.emitters;
             p.tiles = this.tiles;
             p.fireSpeed = fireSpeed;
-            this.patterns.Add(p);
+            switch(p.phase)
+            {
+                case 1:
+                {
+                    this.patternsPhase1.Add(p);
+                    break;
+                }
+                case 2:
+                {
+                    this.patternsPhase2.Add(p);
+                    break;
+                }
+                case 3:
+                {
+                    this.patternsPhase3.Add(p);
+                    break;
+                }
+            }
+            
         }
 
         SetTime();
@@ -58,18 +78,25 @@ public class PhaseManager : MonoBehaviour
         fireSpeed = PlayerPrefs.GetFloat("speed", 0);
         timeModifier = 14/fireSpeed; //Time it takes for a projectile to reach the centre of the players grid
         
+        foreach (PatternSuper p in patternsPhase1)
+        {
+            p.waitTime = timeModifier / launchTimeModifier;
+            p.fireSpeed = fireSpeed;
+        }
+
         PhaseManagement(); // calling switch statement
 
 
 
         ///Testing
-        patterns[0].waitTime = timeModifier / launchTimeModifier;
-        patterns[0].fireSpeed = fireSpeed;
+        //patterns[0].waitTime = timeModifier / launchTimeModifier;
+        //patterns[0].fireSpeed = fireSpeed;
     }
 
     void SetTime()
     {
         time = PlayerPrefs.GetInt("time", 0);
+        Debug.Log("Time set to: " + time);
     }
 
     void PhaseManagement() //Switch statement to navigate phases
@@ -197,12 +224,11 @@ public class PhaseManager : MonoBehaviour
 
         //INSERT PHASE 1 ATTACK STUFF
 
-        //Example pattern
-        Debug.Log("Time in phasemanager: " + timeModifier / launchTimeModifier);
-
         
-        Debug.Log(patterns[0].fireSpeed);
-        yield return StartCoroutine(patterns[0].Begin(emitters[1]));
+        int randomInt = Random.Range(0, patternsPhase1.Count); // Create a random int to represent the chosen pattern
+        Debug.Log(randomInt);
+
+        yield return StartCoroutine(patternsPhase1[randomInt].Begin(emitters[1])); // Run that pattern
         //End example pattern
         
         isSecondaryCoroutineExecuting = false; //saying a coroutine is no longer running
@@ -222,6 +248,9 @@ public class PhaseManager : MonoBehaviour
         isSecondaryCoroutineExecuting = true; //saying a coroutine is running
 
         //INSERT PHASE 2 ATTACK STUFF
+        int randomInt = Random.Range(0, patternsPhase1.Count-1); // Create a random int to represent the chosen pattern
+
+        yield return StartCoroutine(patternsPhase1[randomInt].Begin(emitters[1])); // Run that pattern
 
        
         isSecondaryCoroutineExecuting = false; //saying a coroutine is no longer running
@@ -240,6 +269,9 @@ public class PhaseManager : MonoBehaviour
         }
 
         //INSERT PHASE 3 ATTACK STUFF
+        int randomInt = Random.Range(0, patternsPhase1.Count-1); // Create a random int to represent the chosen pattern
+
+        yield return StartCoroutine(patternsPhase1[randomInt].Begin(emitters[1])); // Run that pattern
 
 
         isSecondaryCoroutineExecuting = false; //saying a coroutine is no longer running
