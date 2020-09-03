@@ -24,11 +24,7 @@ public class OrangeBall : MonoBehaviour, AttackInterface
         
         GameObject projectileClone = Instantiate(projectile, emitter.transform.position, emitter.transform.rotation);
         projectileClone.GetComponent<Rigidbody2D>().velocity = -transform.right * fireSpeed;
-        Debug.Log("Speed in ball: " + fireSpeed);
+        //Debug.Log("Speed in ball: " + fireSpeed);
     }
 
-    public void Use()
-    {
-
-    }
 }

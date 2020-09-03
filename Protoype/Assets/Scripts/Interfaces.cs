@@ -13,6 +13,5 @@ public interface PatternInterface
 public interface AttackInterface
 {
     float fireSpeed {get; set;}
-    void Use();
 }
 

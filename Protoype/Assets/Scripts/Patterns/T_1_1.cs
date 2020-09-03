@@ -31,8 +31,8 @@ public class T_1_1 : PatternSuper
     //The word "override" here lets me re-write what the function does
     public override IEnumerator Begin(GameObject emitter)
     {
-        Debug.Log("Wait time inside pattern" + waitTime);
-        yield return new WaitForSeconds(waitTime);
+        //Debug.Log("Wait time inside pattern" + waitTime);
+        //yield return new WaitForSeconds(waitTime);
         //Testing for when it's fully implemented
 
         orangeAttack.fireSpeed = fireSpeed;

@@ -226,7 +226,7 @@ public class PhaseManager : MonoBehaviour
 
         
         int randomInt = Random.Range(0, patternsPhase1.Count); // Create a random int to represent the chosen pattern
-        Debug.Log(randomInt);
+        //Debug.Log(randomInt);
 
         yield return StartCoroutine(patternsPhase1[randomInt].Begin(emitters[1])); // Run that pattern
         //End example pattern
