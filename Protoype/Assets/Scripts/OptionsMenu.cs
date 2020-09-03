@@ -10,10 +10,15 @@ public class OptionsMenu : MonoBehaviour
     public AudioMixer audioMixer;
     public AudioConfiguration Config;
 
-    public TMP_Dropdown resolutionDropdown;
+    public TMP_ColorGradient[] gradients;
+    public TMP_FontAsset[] fonts;
+ 
+    public TMP_Dropdown resolutionDropdown, textColourDropdown, fontDropdown;
     public Slider playerHealth, attackSpeed, turnTime;
     public float speed;
     public int health, time;
+
+    public TextMeshProUGUI[] allText;
 
     Resolution[] resolutions;
 
@@ -24,8 +29,10 @@ public class OptionsMenu : MonoBehaviour
 
         List<string> options = new List<string>();
         int currentResolutionIndex = 0;
+        int currentGradient = 0;
+        int currentFont = 0;
 
-        for(int i = 0; i < resolutions.Length; i++)
+        for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + " x " + resolutions[i].height;
             options.Add(option);
@@ -39,6 +46,10 @@ public class OptionsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        allText = Resources.FindObjectsOfTypeAll(typeof(TextMeshProUGUI)) as TextMeshProUGUI[];
+        textColourDropdown.value = currentGradient;
+        fontDropdown.value = currentFont;
     }
 
     public void SetGameplay()
@@ -54,9 +65,13 @@ public class OptionsMenu : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void ExitGameplayMenu()
+    public void SetTextFont(int font)
     {
-        SetGameplay();
+        foreach (TextMeshProUGUI text in allText)
+        {
+            text.font = fonts[font];
+        }
+        PlayerPrefs.SetInt("font", font);
     }
 
     public void SetMasterVolume (float MasterVolume)
@@ -97,9 +112,29 @@ public class OptionsMenu : MonoBehaviour
         Screen.fullScreen = isFullScreen;
     }
 
+    public void SetTextColour(int gradientIndex)
+    {
+        foreach(TextMeshProUGUI text in allText)
+        {
+            text.colorGradientPreset = gradients[gradientIndex];
+        }
+
+        PlayerPrefs.SetInt("gradient", gradientIndex);
+    }
+
     public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void ExitGameplayMenu()
+    {
+        SetGameplay();
+    }
+
+    public void ExitDisplayMenu()
+    {
+        PlayerPrefs.Save();
     }
 }
