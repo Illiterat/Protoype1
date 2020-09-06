@@ -16,7 +16,7 @@ public class OptionsMenu : MonoBehaviour
     public TMP_Dropdown resolutionDropdown, textColourDropdown, fontDropdown;
     public Slider playerHealth, attackSpeed, turnTime;
     public float speed;
-    public int health, time;
+    public int health, time, BGOnOffToggle, FXOnOffToggle, ContrastOnOffToggle;
 
     public TextMeshProUGUI[] allText;
 
@@ -89,7 +89,7 @@ public class OptionsMenu : MonoBehaviour
         audioMixer.SetFloat("EffectsVolume", EffectsVolume);
     }
 
-    public void SetMono(bool Mono)
+   /* public void SetMono(bool Mono)
     {
         if(Mono == true)
         {
@@ -100,7 +100,7 @@ public class OptionsMenu : MonoBehaviour
         {
             Config.speakerMode = AudioSpeakerMode.Stereo;
         }
-    }
+    } */
 
     public void SetQuality(int QualityIndex)
     {
@@ -126,6 +126,48 @@ public class OptionsMenu : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void ToggleBackground(bool background)
+    {
+        if(background == true)
+        {
+            BGOnOffToggle = 1;
+        }
+
+        if(background == false)
+        {
+            BGOnOffToggle = 0;
+        }
+        PlayerPrefs.SetInt("backgroundToggle", BGOnOffToggle);
+    }
+
+    public void ToggleFX (bool FX)
+    {
+        if (FX == true)
+        {
+            FXOnOffToggle = 1;
+        }
+
+        if (FX == false)
+        {
+            FXOnOffToggle = 0;
+        }
+        PlayerPrefs.SetInt("fxToggle", FXOnOffToggle);
+    }
+
+    public void ToggleContrast(bool contrast)
+    {
+        if (contrast == true)
+        {
+            ContrastOnOffToggle = 1;
+        }
+
+        if (contrast == false)
+        {
+            ContrastOnOffToggle = 0;
+        }
+        PlayerPrefs.SetInt("contrastToggle", ContrastOnOffToggle);
     }
 
     public void ExitGameplayMenu()
