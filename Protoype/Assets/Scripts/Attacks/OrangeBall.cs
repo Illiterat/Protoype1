@@ -13,11 +13,6 @@ public class OrangeBall : MonoBehaviour, AttackInterface
         this.fireSpeed = fireSpeed;
     }*/
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     public void Launch(GameObject emitter)
     {

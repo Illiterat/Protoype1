@@ -16,11 +16,7 @@ public class ProjectileScript : MonoBehaviour
         source = player.GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Debug.Log(GetComponent<Rigidbody>().velocity);
-    }
+    
 
     private void OnTriggerEnter2D (Collider2D other)
     {

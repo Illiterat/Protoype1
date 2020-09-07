@@ -22,8 +22,8 @@ public class CoreMovement : MonoBehaviour
     public AudioClip move;
     public AudioSource source;
 
-    int currentX; //Current X position in array.
-    int currentY; //Current Y position in array.
+    public int currentX; //Current X position in array.
+    public int currentY; //Current Y position in array.
 
     // Start is called before the first frame update
     void Start()
