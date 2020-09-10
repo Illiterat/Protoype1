@@ -1341,11 +1341,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 286ab46ceee1bed4a8e4d155e14b7446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHB: {fileID: 366511694}
-  bossHB: {fileID: 202691351}
-  playerBack: {fileID: 154832522}
-  bossBack: {fileID: 262370458}
   fractionScreen: 1000
+  playerMaxHealth: 0
+  bossMaxHealth: 0
+  playerHealthBar: {fileID: 0}
+  bossHealthBar: {fileID: 0}
   Values: {fileID: 0}
 --- !u!1 &366511694
 GameObject:
@@ -1753,6 +1753,8 @@ Transform:
   m_LocalPosition: {x: 9.00833, y: 1.062086, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 918745881}
+  - {fileID: 2031304341}
   - {fileID: 1048779754}
   - {fileID: 633074722}
   m_Father: {fileID: 0}
@@ -1986,7 +1988,7 @@ Transform:
   m_LocalScale: {x: 0.55, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 537519882}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &633074723
 SpriteRenderer:
@@ -2524,8 +2526,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918745880}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.3083305, y: 8.162086, z: 1.1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.6999998, y: 7.0999994, z: 1.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 812754010}
@@ -2534,8 +2536,8 @@ Transform:
   - {fileID: 1934294143}
   - {fileID: 1977424920}
   - {fileID: 1214065538}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 537519882}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &947088918
 GameObject:
@@ -2931,7 +2933,7 @@ Transform:
   - {fileID: 1739865494}
   - {fileID: 1213340580}
   m_Father: {fileID: 537519882}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1839735485 &1048779755
 Tilemap:
@@ -3364,7 +3366,7 @@ Tilemap:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
+      m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
   - first: {x: -4, y: 8, z: 0}
@@ -3400,7 +3402,7 @@ Tilemap:
       m_TileIndex: 0
       m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
-      m_TileColorIndex: 1
+      m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       m_AllTileFlags: 1073741825
   - first: {x: 15, y: 8, z: 0}
@@ -3558,10 +3560,10 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
+  - m_RefCount: 2
+    m_Data: {r: 0.21680313, g: 0.23099858, b: 0.2735849, a: 1}
   - m_RefCount: 0
     m_Data: {r: 0, g: 0, b: 0, a: 0}
-  - m_RefCount: 2
-    m_Data: {r: 0.30980393, g: 0.32156864, b: 0.35686275, a: 1}
   - m_RefCount: 17
     m_Data: {r: 0.5457458, g: 0.6577103, b: 0.6886792, a: 1}
   m_TileObjectToInstantiateArray: []
@@ -5616,8 +5618,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031304340}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.3083305, y: 8.162086, z: 1.1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.6999998, y: 7.0999994, z: 1.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1112060554}
@@ -5628,6 +5630,6 @@ Transform:
   - {fileID: 1224007977}
   - {fileID: 325057686}
   - {fileID: 1919008335}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 537519882}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

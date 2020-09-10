@@ -1,0 +1,499 @@
+fileFormatVersion: 2
+guid: 9086bff255120fb4caac6b94f65bf09c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3154067318142658581
+    second: glaistigBG_0
+  - first:
+      213: 2091471780803736940
+    second: glaistigBG_1
+  - first:
+      213: -6252128242912495810
+    second: glaistigBG_2
+  - first:
+      213: -718649158860844112
+    second: glaistigBG_3
+  - first:
+      213: 4744536005051931469
+    second: glaistigBG_4
+  - first:
+      213: -4756405492617028051
+    second: glaistigBG_5
+  - first:
+      213: 2855160516244021009
+    second: glaistigBG_6
+  - first:
+      213: 1561994217940060490
+    second: glaistigBG_7
+  - first:
+      213: 5919464517465963447
+    second: glaistigBG_8
+  - first:
+      213: -5065811720212915462
+    second: glaistigBG_9
+  - first:
+      213: 7901939922675030717
+    second: glaistigBG_10
+  - first:
+      213: -4959791920436980621
+    second: glaistigBG_11
+  - first:
+      213: 2051304122645413582
+    second: glaistigBG_12
+  - first:
+      213: 7017635783492224245
+    second: glaistigBG_13
+  - first:
+      213: 2317656302223532042
+    second: glaistigBG_14
+  - first:
+      213: -4811456082310126476
+    second: glaistigBG_15
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: glaistigBG_0
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 2190
+        width: 688
+        height: 1724
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be710703c708a34d0800000000000000
+      internalID: -3154067318142658581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: glaistigBG_1
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 2166
+        width: 1984
+        height: 1724
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c657f88e086660d10800000000000000
+      internalID: 2091471780803736940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: glaistigBG_2
+      rect:
+        serializedVersion: 2
+        x: 3254
+        y: 2590
+        width: 600
+        height: 892
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e37730ffc7afb39a0800000000000000
+      internalID: -6252128242912495810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: glaistigBG_3
+      rect:
+        serializedVersion: 2
+        x: 4022
+        y: 2230
+        width: 184
+        height: 1696
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b357f7c568d606f0800000000000000
+      internalID: -718649158860844112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: glaistigBG_4
+      rect:
+        serializedVersion: 2
+        x: 4458
+        y: 2230
+        width: 1308
+        height: 1848
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4bdb25eb5af7d140800000000000000
+      internalID: 4744536005051931469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: glaistigBG_5
+      rect:
+        serializedVersion: 2
+        x: 6210
+        y: 2278
+        width: 1336
+        height: 1664
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2e58dca76addfdb0800000000000000
+      internalID: -4756405492617028051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: glaistigBG_6
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 1266
+        width: 1392
+        height: 632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f127bbc519f9720800000000000000
+      internalID: 2855160516244021009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: glaistigBG_7
+      rect:
+        serializedVersion: 2
+        x: 2358
+        y: 1254
+        width: 1136
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49088527715da510800000000000000
+      internalID: 1561994217940060490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: glaistigBG_8
+      rect:
+        serializedVersion: 2
+        x: 3750
+        y: 1202
+        width: 1100
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bb7610bd99262250800000000000000
+      internalID: 5919464517465963447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: glaistigBG_9
+      rect:
+        serializedVersion: 2
+        x: 5085
+        y: 934
+        width: 1372
+        height: 1088
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afad2bd841f92b9b0800000000000000
+      internalID: -5065811720212915462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: glaistigBG_10
+      rect:
+        serializedVersion: 2
+        x: 6790
+        y: 1398
+        width: 812
+        height: 632
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbad58f4e7459ad60800000000000000
+      internalID: 7901939922675030717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: glaistigBG_11
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 310
+        width: 1080
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3745086c6874b2bb0800000000000000
+      internalID: -4959791920436980621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: glaistigBG_12
+      rect:
+        serializedVersion: 2
+        x: 2022
+        y: 234
+        width: 1140
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecef2943b32b77c10800000000000000
+      internalID: 2051304122645413582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: glaistigBG_13
+      rect:
+        serializedVersion: 2
+        x: 3638
+        y: 238
+        width: 1120
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f4cf166096a36160800000000000000
+      internalID: 7017635783492224245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: glaistigBG_14
+      rect:
+        serializedVersion: 2
+        x: 4998
+        y: 38
+        width: 1296
+        height: 812
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a00aa7d9028f92020800000000000000
+      internalID: 2317656302223532042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: glaistigBG_15
+      rect:
+        serializedVersion: 2
+        x: 6506
+        y: 162
+        width: 1456
+        height: 1028
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47423817f264a3db0800000000000000
+      internalID: -4811456082310126476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c2037b5e7059e734a95948dd3d1467fb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
