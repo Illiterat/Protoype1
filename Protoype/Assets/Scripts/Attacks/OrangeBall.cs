@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrangeBall : MonoBehaviour, AttackInterface
+public class OrangeBall : MonoBehaviour//, AttackInterface
 {
     public float fireSpeed {get; set;}
     public GameObject projectile;

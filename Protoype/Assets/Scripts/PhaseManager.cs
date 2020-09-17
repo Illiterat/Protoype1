@@ -224,7 +224,7 @@ public class PhaseManager : MonoBehaviour
 
         //INSERT PHASE 1 ATTACK STUFF
 
-        
+        Debug.Log(patternsPhase1.Count);
         int randomInt = Random.Range(0, patternsPhase1.Count); // Create a random int to represent the chosen pattern
         //Debug.Log(randomInt);
 
