@@ -12224,7 +12224,7 @@ GameObject:
   - component: {fileID: 1648316211}
   - component: {fileID: 1648316210}
   - component: {fileID: 1648316212}
-  - component: {fileID: 1648316214}
+  - component: {fileID: 1648316213}
   m_Layer: 0
   m_Name: EmptyManager
   m_TagString: Untagged
@@ -12301,7 +12301,7 @@ MonoBehaviour:
   - {fileID: 696433469}
   - {fileID: 818292943}
   health: {fileID: 1648316210}
---- !u!114 &1648316214
+--- !u!114 &1648316213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12315,12 +12315,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireSpeed: 0
   waitTime: 0
-  phase: 1
+  phase: 0
   emitters: []
   tiles: []
-  headScript: {fileID: 0}
-  head: {fileID: 513637092}
   stabScript: {fileID: 0}
+  whipScript: {fileID: 0}
   hazard: {fileID: 238649830870073378}
 --- !u!1 &1661966569
 GameObject:

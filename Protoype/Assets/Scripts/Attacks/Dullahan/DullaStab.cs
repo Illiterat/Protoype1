@@ -6,7 +6,7 @@ public class DullaStab : MonoBehaviour
 {
     public GameObject hazard;
 
-    public void Launch(GameObject [] tiles)
+    public void Launch(GameObject[] tiles)
     {
         foreach (GameObject t in tiles)
         {
