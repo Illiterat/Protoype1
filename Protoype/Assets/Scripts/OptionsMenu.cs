@@ -7,6 +7,8 @@ using TMPro;
 
 public class OptionsMenu : MonoBehaviour
 {
+    private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
+
     public AudioMixer audioMixer;
     public AudioConfiguration Config;
 
@@ -17,10 +19,13 @@ public class OptionsMenu : MonoBehaviour
     public Slider playerHealth, attackSpeed, turnTime;
     public float speed;
     public int health, time, BGOnOffToggle, FXOnOffToggle, ContrastOnOffToggle;
+    public static bool GameIsPaused = false;
 
     public TextMeshProUGUI[] allText;
 
     Resolution[] resolutions;
+
+    public GameObject pauseMenuUI;
 
     private void Start()
     {
@@ -50,6 +55,37 @@ public class OptionsMenu : MonoBehaviour
         allText = Resources.FindObjectsOfTypeAll(typeof(TextMeshProUGUI)) as TextMeshProUGUI[];
         textColourDropdown.value = currentGradient;
         fontDropdown.value = currentFont;
+
+        keys.Add("Escape", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Escape", "Escape")));
+    }
+
+    public void Update()
+    {
+        if(Input.GetKeyDown(keys["Escape"]))
+        {
+            if (GameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+    }
+
+    public void Resume()
+    {
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+    }
+
+    public void Pause()
+    {
+        pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
     }
 
     public void SetGameplay()
