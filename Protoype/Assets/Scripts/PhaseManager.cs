@@ -43,6 +43,7 @@ public class PhaseManager : MonoBehaviour
         speedSlider.GetComponent<Slider>().value = fireSpeed;
 
         PatternSuper[] patterns = GetComponents<PatternSuper>();
+        
 
         foreach (PatternSuper p in patterns)
         {
@@ -64,6 +65,11 @@ public class PhaseManager : MonoBehaviour
                 case 3:
                 {
                     this.patternsPhase3.Add(p);
+                    break;
+                }
+                default:
+                {
+                    Debug.Log("The phase was not correctly assigned, it shows: " + p.phase);
                     break;
                 }
             }
@@ -226,9 +232,9 @@ public class PhaseManager : MonoBehaviour
 
         Debug.Log(patternsPhase1.Count);
         int randomInt = Random.Range(0, patternsPhase1.Count); // Create a random int to represent the chosen pattern
-        //Debug.Log(randomInt);
+        Debug.Log(randomInt);
 
-        yield return StartCoroutine(patternsPhase1[randomInt].Begin(emitters[1])); // Run that pattern
+        yield return StartCoroutine(patternsPhase1[randomInt].Begin(emitters[0])); // Run that pattern
         //End example pattern
         
         isSecondaryCoroutineExecuting = false; //saying a coroutine is no longer running

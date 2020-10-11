@@ -68,6 +68,7 @@ public class D_1_3 : PatternSuper
         //Down mid, across mid, big wait, bottom line, top line right line
         yield return new WaitForSeconds(waitTime);
         //headScript.Launch(emitters[0]);
+        Debug.Log(tileColMid);
         whipScript.Launch(tileColMid);
         yield return new WaitForSeconds(waitTime);
         stabScript.Launch(tileRowMid);
