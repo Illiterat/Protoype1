@@ -11,7 +11,7 @@ public class KeybindManagerScript : MonoBehaviour
     //Dictionary for storing keybinds
     private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
 
-    public TextMeshProUGUI upText, leftText, downText, rightText; //Accessing text on menu buttons
+    public TextMeshProUGUI upText, leftText, downText, rightText, escapetext; //Accessing text on menu buttons
 
     private GameObject currentKey;
 
@@ -31,12 +31,14 @@ public class KeybindManagerScript : MonoBehaviour
         keys.Add("Down", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Down", "S")));
         keys.Add("Left", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Left", "A")));
         keys.Add("Right", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Right", "D")));
+        keys.Add("Escape", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Escape", "Escape")));
 
         //Change the button text to match the keybinds
         upText.text = keys["Up"].ToString();
         downText.text = keys["Down"].ToString();
         leftText.text = keys["Left"].ToString();
         rightText.text = keys["Right"].ToString();
+        escapetext.text = keys["Escape"].ToString();
         
     }
 
@@ -54,6 +56,7 @@ public class KeybindManagerScript : MonoBehaviour
                 && input != keys["Down"]
                 && input != keys["Left"]
                 && input != keys["Right"]
+                && input != keys["Escape"]
                 )
             {
                 //Change the currentKey's name to the key that was just pressed
@@ -101,12 +104,14 @@ public class KeybindManagerScript : MonoBehaviour
         keys["Down"] = KeyCode.S;
         keys["Left"] = KeyCode.A;
         keys["Right"] = KeyCode.D;
+        keys["Escape"] = KeyCode.Escape;
 
         //Updated the text to match the new keybinds
         upText.text = keys["Up"].ToString();
         downText.text = keys["Down"].ToString();
         leftText.text = keys["Left"].ToString();
         rightText.text = keys["Right"].ToString();
+        escapetext.text = keys["Escape"].ToString();
     }
 
     public void SetDefaultKeysArrows()
@@ -116,12 +121,14 @@ public class KeybindManagerScript : MonoBehaviour
         keys["Down"] = KeyCode.DownArrow;
         keys["Left"] = KeyCode.LeftArrow;
         keys["Right"] = KeyCode.RightArrow;
+        keys["Escape"] = KeyCode.Escape;
 
         //Updated the text to match the new keybinds
         upText.text = keys["Up"].ToString();
         downText.text = keys["Down"].ToString();
         leftText.text = keys["Left"].ToString();
         rightText.text = keys["Right"].ToString();
+        escapetext.text = keys["Escape"].ToString();
     }
 
     public void ExitKeybindMenu()
@@ -131,6 +138,7 @@ public class KeybindManagerScript : MonoBehaviour
             || keys["Down"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Down", "S"))
             || keys["Left"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Left", "A"))
             || keys["Right"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Right", "D"))
+            || keys["Escape"] != (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Escape", "Escape"))
             )
         {
             SaveKeys();
