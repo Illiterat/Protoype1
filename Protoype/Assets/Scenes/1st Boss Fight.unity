@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15834,28 +15834,9 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1648316211}
-  - component: {fileID: 1648316210}
-  - component: {fileID: 1648316212}
-  - component: {fileID: 1648316213}
-  - component: {fileID: 1648316215}
-  - component: {fileID: 1648316214}
-  m_Layer: 0
-  m_Name: EmptyManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1648316210
-=======
   m_GameObject: {fileID: 821033501}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &821033506
->>>>>>> 13cee46fc53de165f70f4360d1c6015c9437dfa1
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15897,145 +15878,10 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 1648316209}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1648316212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1648316209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 162a3e811e3a74a48af6a92e1732f861, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileLaunch: {fileID: 0}
-  source: {fileID: 0}
-  phase: 0
-  randomiser: 0
-  time: 0
-  damage: 0
-  projectile: {fileID: 719554046}
-  speedSlider: {fileID: 923850999}
-  fireSpeed: 10
-  launchTimeModifier: 2
-  emitters:
-  - {fileID: 2121878813}
-  - {fileID: 1234360492}
-  - {fileID: 1181299850}
-  tiles:
-  - {fileID: 715281483}
-  - {fileID: 1987165345}
-  - {fileID: 351337124}
-  - {fileID: 913575326}
-  - {fileID: 852850327}
-  - {fileID: 1036099943}
-  - {fileID: 526741611}
-  - {fileID: 696433469}
-  - {fileID: 818292943}
-  health: {fileID: 1648316210}
---- !u!114 &1648316213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1648316209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a39e60aef948ea24f98308e4e01c75de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireSpeed: 0
-  waitTime: 0
-  phase: 1
-  emitters: []
-  tiles: []
-  stabScript: {fileID: 0}
-  whipScript: {fileID: 0}
-  hazard: {fileID: 238649830870073378}
---- !u!114 &1648316214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1648316209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01e1ccf07afd8d040b47519d9b9ebf7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireSpeed: 0
-  waitTime: 0
-  phase: 1
-  emitters: []
-  tiles: []
-  stabScript: {fileID: 0}
-  whipScript: {fileID: 0}
-  hazard: {fileID: 238649830870073378}
---- !u!114 &1648316215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1648316209}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6715a1cf0c4974e42ae2a9227e6abeab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireSpeed: 0
-  waitTime: 0
-  phase: 1
-  emitters: []
-  tiles: []
-  stabScript: {fileID: 0}
-  whipScript: {fileID: 0}
-  hazard: {fileID: 238649830870073378}
---- !u!1 &1661966569
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1661966570}
-  - component: {fileID: 1661966571}
-  m_Layer: 0
-  m_Name: grass (far) 3 (8)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1661966570
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1661966569}
-  m_LocalRotation: {x: -0, y: -0, z: -0.0807583, w: 0.9967337}
-  m_LocalPosition: {x: -26.984903, y: 23.399492, z: 0}
-  m_LocalScale: {x: 0.16666648, y: 0.16666648, z: 1}
-=======
   m_GameObject: {fileID: 839713253}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -207.48, y: -32.559998, z: 0}
   m_LocalScale: {x: 0.03, y: 0.03, z: 1}
->>>>>>> 13cee46fc53de165f70f4360d1c6015c9437dfa1
   m_Children: []
   m_Father: {fileID: 1922954204}
   m_RootOrder: 3
@@ -29891,7 +29737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireSpeed: 0
   waitTime: 0
-  phase: 0
+  phase: 1
   emitters: []
   tiles: []
   stabScript: {fileID: 0}
