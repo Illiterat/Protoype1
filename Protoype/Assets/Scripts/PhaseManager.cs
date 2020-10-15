@@ -201,7 +201,6 @@ public class PhaseManager : MonoBehaviour
             case 2:
                 StartCoroutine(Phase2());
                 break;
-
             case 3:
                 StartCoroutine(Phase3());
                 break;

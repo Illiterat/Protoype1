@@ -30,11 +30,11 @@ public class D_1_2 : PatternSuper
         //headScript.projectile = this.head;
 
         //Set up for the spine stab
-        if(gameObject.GetComponent(typeof(DullaStab)) == null)
-        {
+        /*if(gameObject.GetComponent(typeof(DullaStab)) == null)
+        { */
             stabScript = gameObject.AddComponent<DullaStab>();
             stabScript.hazard = this.hazard;
-        }
+       /* }
         else
         {
             stabScript = gameObject.GetComponent(typeof(DullaStab)) as DullaStab;
@@ -42,22 +42,22 @@ public class D_1_2 : PatternSuper
 
         //Set up for spine whip
         if(gameObject.GetComponent(typeof(DullaWhip)) == null)
-        {
+        { */
             whipScript = gameObject.AddComponent<DullaWhip>();
             whipScript.hazard = this.hazard;
-        }
+       /* }
         else
         {
             whipScript = gameObject.GetComponent(typeof(DullaWhip)) as DullaWhip;
-        }
+        } */
 
 
         //Set the rows and columns
-        tileRowTop = new GameObject[3] {tiles[0],tiles[1],tiles[2]};
-        tileRowMid = new GameObject[3] {tiles[3],tiles[4],tiles[5]};
-        tileRowBot = new GameObject[3] {tiles[6],tiles[7],tiles[8]};
-        tileColMid = new GameObject[3] {tiles[1],tiles[4],tiles[7]};
-        tileColR = new GameObject[3] {tiles[2],tiles[5],tiles[8]};
+        tileRowTop = new GameObject[] {tiles[0],tiles[1],tiles[2]};
+        tileRowMid = new GameObject[] {tiles[3],tiles[4],tiles[5]};
+        tileRowBot = new GameObject[] {tiles[6],tiles[7],tiles[8]};
+        tileColMid = new GameObject[] {tiles[1],tiles[4],tiles[7]};
+        tileColR = new GameObject[] {tiles[2],tiles[5],tiles[8]};
     }
 
 

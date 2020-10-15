@@ -19,7 +19,7 @@ public class OptionsMenu : MonoBehaviour
     public Slider playerHealth, attackSpeed, turnTime;
     public float speed;
     public int health, time, BGOnOffToggle, FXOnOffToggle, ContrastOnOffToggle;
-    public static bool GameIsPaused = false;
+    public bool GameIsPaused = false;
 
     public TextMeshProUGUI[] allText;
 

@@ -1696,6 +1696,7 @@ MonoBehaviour:
   BGOnOffToggle: 0
   FXOnOffToggle: 0
   ContrastOnOffToggle: 0
+  GameIsPaused: 0
   allText: []
   pauseMenuUI: {fileID: 1562062239}
 --- !u!1 &247870552

@@ -51,7 +51,6 @@ public class D_1_1 : PatternSuper
             whipScript = gameObject.GetComponent(typeof(DullaWhip)) as DullaWhip;
         }*/
         
-
         
         //Set the rows and columns
         tileRowTop = new GameObject[] {tiles[0],tiles[1],tiles[2]};

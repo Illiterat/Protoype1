@@ -12,6 +12,7 @@ public class CoreMovement : MonoBehaviour
 
     public DamageAndHealthValues valueScipt; // accessing the DamageAndHealthValues script
     public TileTriggerScript currentSpace;
+    public OptionsMenu Options;
     public float movementSpeed;
 
     public List<GameObject> spacesInput = new List<GameObject>(); //For taking the objects in from the inspector
@@ -78,46 +79,49 @@ public class CoreMovement : MonoBehaviour
         CheckForActivation();
         player.transform.position = Vector3.Lerp(player.transform.position, playerDestination.transform.position, movementSpeed * Time.deltaTime);
 
-        if (Input.GetKeyDown(keys["Right"])) //Right movement
+        if (Options.GameIsPaused == false)
         {
-            //Check if space to move to exists
-            if (currentX + 1 < spacesX)
+            if (Input.GetKeyDown(keys["Right"])) //Right movement
             {
-                currentX++; //Update variable representing it's position
-                //Move the player
-                playerDestination.transform.position = spaces[currentX, currentY].transform.position;
-                source.PlayOneShot(move);
-                //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
+                //Check if space to move to exists
+                if (currentX + 1 < spacesX)
+                {
+                    currentX++; //Update variable representing it's position
+                                //Move the player
+                    playerDestination.transform.position = spaces[currentX, currentY].transform.position;
+                    source.PlayOneShot(move);
+                    //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
+                }
             }
-        }
-        else if (Input.GetKeyDown(keys["Left"])) //Left movement
-        {
-            if (currentX - 1 >= 0)
+            else if (Input.GetKeyDown(keys["Left"])) //Left movement
             {
-                currentX--;
-                playerDestination.transform.position = spaces[currentX, currentY].transform.position;
-                source.PlayOneShot(move);
-                //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
+                if (currentX - 1 >= 0)
+                {
+                    currentX--;
+                    playerDestination.transform.position = spaces[currentX, currentY].transform.position;
+                    source.PlayOneShot(move);
+                    //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
+                }
             }
-        }
-        else if (Input.GetKeyDown(keys["Up"])) //Up movement
-        {
-            if (currentY - 1 >= 0)
+            else if (Input.GetKeyDown(keys["Up"])) //Up movement
             {
-                currentY--;
-                playerDestination.transform.position = spaces[currentX, currentY].transform.position;
-                source.PlayOneShot(move);
-                //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
+                if (currentY - 1 >= 0)
+                {
+                    currentY--;
+                    playerDestination.transform.position = spaces[currentX, currentY].transform.position;
+                    source.PlayOneShot(move);
+                    //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
+                }
             }
-        }
-        else if (Input.GetKeyDown(keys["Down"])) //Down movement
-        {
-            if (currentY + 1 < spacesY)
+            else if (Input.GetKeyDown(keys["Down"])) //Down movement
             {
-                currentY++;
-                playerDestination.transform.position = spaces[currentX, currentY].transform.position;
-                source.PlayOneShot(move);
-                //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
+                if (currentY + 1 < spacesY)
+                {
+                    currentY++;
+                    playerDestination.transform.position = spaces[currentX, currentY].transform.position;
+                    source.PlayOneShot(move);
+                    //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
+                }
             }
         }
     }
