@@ -30,26 +30,26 @@ public class D_1_3 : PatternSuper
         //headScript.projectile = this.head;
 
         //Set up for the spine stab
-        if(gameObject.GetComponent(typeof(DullaStab)) == null)
-        {
+        /*if(gameObject.GetComponent(typeof(DullaStab)) == null)
+        {*/
             stabScript = gameObject.AddComponent<DullaStab>();
             stabScript.hazard = this.hazard;
-        }
+        /*}
         else
         {
             stabScript = gameObject.GetComponent(typeof(DullaStab)) as DullaStab;
-        }
+        }*/
 
         //Set up for spine whip
-        if(gameObject.GetComponent(typeof(DullaWhip)) == null)
-        {
+        /*if(gameObject.GetComponent(typeof(DullaWhip)) == null)
+        {*/
             whipScript = gameObject.AddComponent<DullaWhip>();
             whipScript.hazard = this.hazard;
-        }
+        /*}
         else 
         {
             whipScript = gameObject.GetComponent(typeof(DullaWhip)) as DullaWhip;
-        }
+        }*/
 
 
         //Set the rows and columns
