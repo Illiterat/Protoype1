@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class OptionsMenu : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class OptionsMenu : MonoBehaviour
     Resolution[] resolutions;
 
     public GameObject pauseMenuUI;
+    public GameObject pauseFirst;
 
     private void Start()
     {
@@ -86,6 +88,8 @@ public class OptionsMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        EventSystem.current.SetSelectedGameObject(pauseFirst);
+
     }
 
     public void SetGameplay()

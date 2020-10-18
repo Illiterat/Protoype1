@@ -19,8 +19,6 @@ public class PhaseManager : MonoBehaviour
     public bool damage;
 
     public GameObject projectile;
-    public GameObject speedSlider; //Slider to change projectile speed at runtime.
-    [Range(1.0f, 50.0f)]
 
     public float fireSpeed;
     private float timeModifier; //Modifier used to change times between launching projectiles
@@ -40,7 +38,6 @@ public class PhaseManager : MonoBehaviour
         phase = 1; //starting phase
         bossPhase = 1; //starting phase
         damage = false;
-        speedSlider.GetComponent<Slider>().value = fireSpeed;
 
         PatternSuper[] patterns = GetComponents<PatternSuper>();
         
