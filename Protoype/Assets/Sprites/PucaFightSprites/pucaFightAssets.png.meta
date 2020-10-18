@@ -1,0 +1,739 @@
+fileFormatVersion: 2
+guid: 88b0c9bc70cd8df4292a8c26cfc75f08
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2417951426243712587
+    second: pucaFightAssets_0
+  - first:
+      213: -3500393183631042142
+    second: pucaFightAssets_1
+  - first:
+      213: 2476010526804201757
+    second: pucaFightAssets_2
+  - first:
+      213: -1981322706049051471
+    second: pucaFightAssets_3
+  - first:
+      213: 136083597688521361
+    second: pucaFightAssets_4
+  - first:
+      213: 5856943844739938143
+    second: pucaFightAssets_5
+  - first:
+      213: 5540890507716985337
+    second: pucaFightAssets_6
+  - first:
+      213: -6837483101850551578
+    second: pucaFightAssets_7
+  - first:
+      213: 8132359480567851442
+    second: pucaFightAssets_8
+  - first:
+      213: -8734814666617646459
+    second: pucaFightAssets_9
+  - first:
+      213: -5549307910290346312
+    second: pucaFightAssets_10
+  - first:
+      213: 2414153044531593600
+    second: pucaFightAssets_11
+  - first:
+      213: 4913355036014891190
+    second: pucaFightAssets_12
+  - first:
+      213: -5551417117061175231
+    second: pucaFightAssets_13
+  - first:
+      213: -5699617414910335052
+    second: pucaFightAssets_14
+  - first:
+      213: 9082418896360057457
+    second: pucaFightAssets_15
+  - first:
+      213: -1475158911329445495
+    second: pucaFightAssets_16
+  - first:
+      213: -1024286224268234022
+    second: pucaFightAssets_17
+  - first:
+      213: 4139883567124390357
+    second: pucaFightAssets_18
+  - first:
+      213: 1810667441119598120
+    second: pucaFightAssets_19
+  - first:
+      213: -6281892334593411387
+    second: pucaFightAssets_20
+  - first:
+      213: -7522527839295135019
+    second: pucaFightAssets_21
+  - first:
+      213: 710933383021092376
+    second: pucaFightAssets_22
+  - first:
+      213: 4887548377837175199
+    second: pucaFightAssets_23
+  - first:
+      213: 8202302723652814599
+    second: pucaFightAssets_24
+  - first:
+      213: -4893777236091067118
+    second: pucaFightAssets_25
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pucaFightAssets_0
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 4322
+        width: 1728
+        height: 3696
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b9289a1df5b17ed0800000000000000
+      internalID: -2417951426243712587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_1
+      rect:
+        serializedVersion: 2
+        x: 1994
+        y: 4310
+        width: 1412
+        height: 3712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a9197302fa1c6fc0800000000000000
+      internalID: -3500393183631042142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_2
+      rect:
+        serializedVersion: 2
+        x: 3498
+        y: 4394
+        width: 1252
+        height: 3568
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d11da46a47e8c5220800000000000000
+      internalID: 2476010526804201757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_3
+      rect:
+        serializedVersion: 2
+        x: 5062
+        y: 7398
+        width: 712
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b4d7801f7de084e0800000000000000
+      internalID: -1981322706049051471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_4
+      rect:
+        serializedVersion: 2
+        x: 6618
+        y: 7951
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1924bf3af4773e100800000000000000
+      internalID: 136083597688521361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_5
+      rect:
+        serializedVersion: 2
+        x: 7202
+        y: 7274
+        width: 812
+        height: 736
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f577227356b084150800000000000000
+      internalID: 5856943844739938143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_6
+      rect:
+        serializedVersion: 2
+        x: 6214
+        y: 7298
+        width: 740
+        height: 628
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f10ec35f8235ec40800000000000000
+      internalID: 5540890507716985337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_7
+      rect:
+        serializedVersion: 2
+        x: 5058
+        y: 5794
+        width: 1480
+        height: 1252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea367c68516c11a0800000000000000
+      internalID: -6837483101850551578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_8
+      rect:
+        serializedVersion: 2
+        x: 6794
+        y: 5806
+        width: 1204
+        height: 1244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9e6094cd1fbd070800000000000000
+      internalID: 8132359480567851442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_9
+      rect:
+        serializedVersion: 2
+        x: 5258
+        y: 4330
+        width: 1608
+        height: 1244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5821269f654b7c680800000000000000
+      internalID: -8734814666617646459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_10
+      rect:
+        serializedVersion: 2
+        x: 7018
+        y: 4554
+        width: 928
+        height: 928
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bee0e96bd5ecf2b0800000000000000
+      internalID: -5549307910290346312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_11
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 3090
+        width: 948
+        height: 896
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 081cbbc376bc08120800000000000000
+      internalID: 2414153044531593600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_12
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 3006
+        width: 935
+        height: 996
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b05b098f5ebf2440800000000000000
+      internalID: 4913355036014891190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_13
+      rect:
+        serializedVersion: 2
+        x: 2546
+        y: 2946
+        width: 1068
+        height: 1132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 148ab817b8765f2b0800000000000000
+      internalID: -5551417117061175231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_14
+      rect:
+        serializedVersion: 2
+        x: 3726
+        y: 3326
+        width: 552
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b7a3a4b824e6e0b0800000000000000
+      internalID: -5699617414910335052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_15
+      rect:
+        serializedVersion: 2
+        x: 4390
+        y: 3242
+        width: 752
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17a26d29ddb3b0e70800000000000000
+      internalID: 9082418896360057457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_16
+      rect:
+        serializedVersion: 2
+        x: 5406
+        y: 3058
+        width: 1104
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 989d4fe29ce278be0800000000000000
+      internalID: -1475158911329445495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_17
+      rect:
+        serializedVersion: 2
+        x: 6686
+        y: 2862
+        width: 1424
+        height: 1348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad27a2e1b1109c1f0800000000000000
+      internalID: -1024286224268234022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_18
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 2302
+        width: 1256
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d12de59b22d37930800000000000000
+      internalID: 4139883567124390357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_19
+      rect:
+        serializedVersion: 2
+        x: 2330
+        y: 1934
+        width: 1500
+        height: 712
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8269c42c178c02910800000000000000
+      internalID: 1810667441119598120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_20
+      rect:
+        serializedVersion: 2
+        x: 4050
+        y: 1766
+        width: 1584
+        height: 980
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c67f4f543c32d8a0800000000000000
+      internalID: -6281892334593411387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_21
+      rect:
+        serializedVersion: 2
+        x: 6094
+        y: 1850
+        width: 1864
+        height: 676
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2a3d549cc9a9790800000000000000
+      internalID: -7522527839295135019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_22
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 1454
+        width: 1504
+        height: 652
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e50f9252ebdd900800000000000000
+      internalID: 710933383021092376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_23
+      rect:
+        serializedVersion: 2
+        x: 5262
+        y: 390
+        width: 2152
+        height: 1140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f918583ba5f04d340800000000000000
+      internalID: 4887548377837175199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_24
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 582
+        width: 1260
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7078b879ede64d170800000000000000
+      internalID: 8202302723652814599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pucaFightAssets_25
+      rect:
+        serializedVersion: 2
+        x: 2210
+        y: 382
+        width: 2208
+        height: 940
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21526e8388fc51cb0800000000000000
+      internalID: -4893777236091067118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 6bb6c042030c78442b3b87f58f945d3d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
