@@ -11,7 +11,8 @@ public class DullaStab : MonoBehaviour
         foreach (GameObject t in tiles)
         {
             GameObject hazardClone = Instantiate(hazard, t.transform.position, t.transform.rotation);
-            Destroy(hazardClone,1);
+            hazardClone.GetComponent<HitAreaScript>().enabled = true;
+            Destroy(hazardClone,3);
         }
     }
 }
