@@ -66,21 +66,18 @@ public class D_2_2 : PatternSuper
     {
         //----------UPDATE THIS
         headScript.fireSpeed = fireSpeed;
-        //Down mid, across mid, big wait, bottom line, top line right line
-        yield return new WaitForSeconds(waitTime);
-        headScript.Launch(emitters[0]);
-        //Debug.Log(tileColMid);
-        whipScript.Launch(tileColMid);
-        yield return new WaitForSeconds(waitTime);
-        whipScript.Launch(tileColR);
-        yield return new WaitForSeconds(waitTime*2);
-        headScript.Launch(emitters[1]);
+        //Top, bottom, head throw, front line, cris cross
         yield return new WaitForSeconds(waitTime);
         stabScript.Launch(tileRowTop);
         yield return new WaitForSeconds(waitTime);
+        stabScript.Launch(tileRowBot);
+        yield return new WaitForSeconds(waitTime);
+        headScript.Launch(emitters[0]);
+        yield return new WaitForSeconds(waitTime);
+        whipScript.Launch(tileColR);
+        yield return new WaitForSeconds(waitTime);
         stabScript.Launch(tileRowMid);
         yield return new WaitForSeconds(waitTime);
-        stabScript.Launch(tileRowBot);
-        
+        whipScript.Launch(tileColR);
     }
 }
