@@ -30675,6 +30675,8 @@ GameObject:
   - component: {fileID: 1648316218}
   - component: {fileID: 1648316217}
   - component: {fileID: 1648316216}
+  - component: {fileID: 1648316220}
+  - component: {fileID: 1648316221}
   m_Layer: 0
   m_Name: EmptyManager
   m_TagString: Untagged
@@ -30824,15 +30826,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireSpeed: 0
   waitTime: 0
-  phase: 0
+  phase: 3
   emitters: []
   tiles: []
   headScript: {fileID: 0}
-  head: {fileID: 0}
+  head: {fileID: 513637092}
   stabScript: {fileID: 0}
   whipScript: {fileID: 0}
   reverseWhipScript: {fileID: 0}
-  hazard: {fileID: 0}
+  hazard: {fileID: 238649830870073378}
 --- !u!114 &1648316217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30851,10 +30853,10 @@ MonoBehaviour:
   emitters: []
   tiles: []
   headScript: {fileID: 0}
-  head: {fileID: 0}
+  head: {fileID: 513637092}
   stabScript: {fileID: 0}
   whipScript: {fileID: 0}
-  hazard: {fileID: 0}
+  hazard: {fileID: 238649830870073378}
 --- !u!114 &1648316218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30873,10 +30875,10 @@ MonoBehaviour:
   emitters: []
   tiles: []
   headScript: {fileID: 0}
-  head: {fileID: 0}
+  head: {fileID: 513637092}
   stabScript: {fileID: 0}
   whipScript: {fileID: 0}
-  hazard: {fileID: 0}
+  hazard: {fileID: 238649830870073378}
 --- !u!114 &1648316219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30895,10 +30897,56 @@ MonoBehaviour:
   emitters: []
   tiles: []
   headScript: {fileID: 0}
-  head: {fileID: 0}
+  head: {fileID: 513637092}
   stabScript: {fileID: 0}
   whipScript: {fileID: 0}
-  hazard: {fileID: 0}
+  hazard: {fileID: 238649830870073378}
+--- !u!114 &1648316220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648316209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1d41ae69ed401d49a60a557e35d3de8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireSpeed: 0
+  waitTime: 0
+  phase: 3
+  emitters: []
+  tiles: []
+  headScript: {fileID: 0}
+  head: {fileID: 513637092}
+  stabScript: {fileID: 0}
+  whipScript: {fileID: 0}
+  reverseWhipScript: {fileID: 0}
+  hazard: {fileID: 238649830870073378}
+--- !u!114 &1648316221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648316209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce3aafacf35305a48b85d567efc51cdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireSpeed: 0
+  waitTime: 0
+  phase: 3
+  emitters: []
+  tiles: []
+  headScript: {fileID: 0}
+  head: {fileID: 513637092}
+  stabScript: {fileID: 0}
+  whipScript: {fileID: 0}
+  reverseWhipScript: {fileID: 0}
+  hazard: {fileID: 238649830870073378}
 --- !u!1 &1661966569
 GameObject:
   m_ObjectHideFlags: 0

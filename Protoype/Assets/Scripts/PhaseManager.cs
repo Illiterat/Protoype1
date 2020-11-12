@@ -10,7 +10,7 @@ public class PhaseManager : MonoBehaviour
     public AudioSource source;
 
     public int phase; // int for Phasemanagement
-    int bossPhase; // int for bossphase
+    public int bossPhase; // int for bossphase
     public int randomiser; //Variable for picking a random bool outcome for tiles.
     public int time;
 
@@ -81,7 +81,18 @@ public class PhaseManager : MonoBehaviour
         fireSpeed = PlayerPrefs.GetFloat("speed", 0);
         timeModifier = 14/fireSpeed; //Time it takes for a projectile to reach the centre of the players grid
         
+        //Set the current waittime and firespeed of each pattern
         foreach (PatternSuper p in patternsPhase1)
+        {
+            p.waitTime = timeModifier / launchTimeModifier;
+            p.fireSpeed = fireSpeed;
+        }
+        foreach (PatternSuper p in patternsPhase2)
+        {
+            p.waitTime = timeModifier / launchTimeModifier;
+            p.fireSpeed = fireSpeed;
+        }
+        foreach (PatternSuper p in patternsPhase3)
         {
             p.waitTime = timeModifier / launchTimeModifier;
             p.fireSpeed = fireSpeed;
@@ -250,9 +261,9 @@ public class PhaseManager : MonoBehaviour
         isSecondaryCoroutineExecuting = true; //saying a coroutine is running
 
         //INSERT PHASE 2 ATTACK STUFF
-        int randomInt = Random.Range(0, patternsPhase1.Count-1); // Create a random int to represent the chosen pattern
+        int randomInt = Random.Range(0, patternsPhase2.Count); // Create a random int to represent the chosen pattern
 
-        yield return StartCoroutine(patternsPhase1[randomInt].Begin(emitters[1])); // Run that pattern
+        yield return StartCoroutine(patternsPhase2[randomInt].Begin(emitters[1])); // Run that pattern
 
        
         isSecondaryCoroutineExecuting = false; //saying a coroutine is no longer running
@@ -271,9 +282,9 @@ public class PhaseManager : MonoBehaviour
         }
 
         //INSERT PHASE 3 ATTACK STUFF
-        int randomInt = Random.Range(0, patternsPhase1.Count-1); // Create a random int to represent the chosen pattern
+        int randomInt = Random.Range(0, patternsPhase3.Count); // Create a random int to represent the chosen pattern
 
-        yield return StartCoroutine(patternsPhase1[randomInt].Begin(emitters[1])); // Run that pattern
+        yield return StartCoroutine(patternsPhase3[randomInt].Begin(emitters[1])); // Run that pattern
 
 
         isSecondaryCoroutineExecuting = false; //saying a coroutine is no longer running
