@@ -3149,7 +3149,7 @@ Transform:
   m_GameObject: {fileID: 168907795}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 70.8013, y: -4.880998, z: 0}
-  m_LocalScale: {x: 1.621622, y: 1.621622, z: 1.621622}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2088713648}
   - {fileID: 528196562}
@@ -30731,6 +30731,7 @@ MonoBehaviour:
   projectileLaunch: {fileID: 0}
   source: {fileID: 0}
   phase: 0
+  bossPhase: 0
   randomiser: 0
   time: 0
   damage: 0
@@ -38449,8 +38450,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -38.56081, y: 0.1099236}
-  m_SizeDelta: {x: 690.8, y: 397.4}
+  m_AnchoredPosition: {x: -74.6, y: 4.7}
+  m_SizeDelta: {x: 1069.1, y: 598.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2097530097
 GameObject:
