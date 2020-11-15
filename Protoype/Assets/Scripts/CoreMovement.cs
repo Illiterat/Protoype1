@@ -90,7 +90,7 @@ public class CoreMovement : MonoBehaviour
                                 //Move the player
                     playerDestination.transform.position = spaces[currentX, currentY].transform.position;
                     source.PlayOneShot(move);
-                    //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
+                    
                 }
             }
             else if (Input.GetKeyDown(keys["Left"])) //Left movement
@@ -100,7 +100,6 @@ public class CoreMovement : MonoBehaviour
                     currentX--;
                     playerDestination.transform.position = spaces[currentX, currentY].transform.position;
                     source.PlayOneShot(move);
-                    //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
                 }
             }
             else if (Input.GetKeyDown(keys["Up"])) //Up movement
@@ -110,7 +109,7 @@ public class CoreMovement : MonoBehaviour
                     currentY--;
                     playerDestination.transform.position = spaces[currentX, currentY].transform.position;
                     source.PlayOneShot(move);
-                    //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
+                   
                 }
             }
             else if (Input.GetKeyDown(keys["Down"])) //Down movement
@@ -120,12 +119,12 @@ public class CoreMovement : MonoBehaviour
                     currentY++;
                     playerDestination.transform.position = spaces[currentX, currentY].transform.position;
                     source.PlayOneShot(move);
-                    //Debug.Log(currentX + "," + currentY); //Uncomment to display position as you move
+                   
                 }
             }
         }
     }
-    //Mwahahahahah I am saying something
+
     void CheckForActivation()
     {
        currentSpace = spaces[currentX, currentY].GetComponent<TileTriggerScript>();

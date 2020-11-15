@@ -18,8 +18,6 @@ public class PhaseManager : MonoBehaviour
     private bool isSecondaryCoroutineExecuting = false;
     public bool damage;
 
-    public GameObject projectile;
-
     public float fireSpeed;
     private float timeModifier; //Modifier used to change times between launching projectiles
     public float launchTimeModifier; //Amount of projectiles that are shot before the first one reaches the middle of the players tiles
@@ -99,12 +97,6 @@ public class PhaseManager : MonoBehaviour
         }
 
         PhaseManagement(); // calling switch statement
-
-
-
-        ///Testing
-        //patterns[0].waitTime = timeModifier / launchTimeModifier;
-        //patterns[0].fireSpeed = fireSpeed;
     }
 
     void SetTime()
@@ -131,13 +123,6 @@ public class PhaseManager : MonoBehaviour
         }
     }
 
-    private void Launch(GameObject emitter)
-    {
-        source.PlayOneShot(projectileLaunch);
-        GameObject projectileClone = Instantiate(projectile, emitter.transform.position, emitter.transform.rotation);
-        projectileClone.GetComponent<Rigidbody2D>().velocity = -transform.right * fireSpeed;
-    }
-
     public IEnumerator DodgePhase()
     {
         if (isCoroutineExecuting)  //checking to see if another coroutine is running before moving on
@@ -152,11 +137,6 @@ public class PhaseManager : MonoBehaviour
 
             tileScript.render.sprite = tileScript.color[0];
             tileScript.activated = false;
-        }
-
-        foreach (GameObject emitter in emitters)
-        {
-            source = emitter.GetComponent<AudioSource>();
         }
 
         BossPhaseManagement(); //calling Boss phase attack stuff
@@ -213,10 +193,6 @@ public class PhaseManager : MonoBehaviour
                 StartCoroutine(Phase3());
                 break;
 
-            case 4:
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // loading the next scene when the boss's health goes below 0
-                break;
-
             default:
                 print("Wrong Int");
                 break;
@@ -235,14 +211,8 @@ public class PhaseManager : MonoBehaviour
             bossPhase = 2;
         }
 
-        //INSERT PHASE 1 ATTACK STUFF
-
-        Debug.Log(patternsPhase1.Count);
         int randomInt = Random.Range(0, patternsPhase1.Count); // Create a random int to represent the chosen pattern
-        Debug.Log(randomInt);
-
         yield return StartCoroutine(patternsPhase1[randomInt].Begin(emitters[0])); // Run that pattern
-        //End example pattern
         
         isSecondaryCoroutineExecuting = false; //saying a coroutine is no longer running
     }
@@ -257,15 +227,11 @@ public class PhaseManager : MonoBehaviour
             bossPhase = 3;
         }
 
-
         isSecondaryCoroutineExecuting = true; //saying a coroutine is running
 
-        //INSERT PHASE 2 ATTACK STUFF
         int randomInt = Random.Range(0, patternsPhase2.Count); // Create a random int to represent the chosen pattern
-
         yield return StartCoroutine(patternsPhase2[randomInt].Begin(emitters[1])); // Run that pattern
 
-       
         isSecondaryCoroutineExecuting = false; //saying a coroutine is no longer running
     }
 
@@ -276,16 +242,8 @@ public class PhaseManager : MonoBehaviour
 
         isSecondaryCoroutineExecuting = true; //saying a coroutine is running
 
-        if (health.bossHealth == 0 || health.bossHealth <= 0)
-        {
-            bossPhase = 4;
-        }
-
-        //INSERT PHASE 3 ATTACK STUFF
         int randomInt = Random.Range(0, patternsPhase3.Count); // Create a random int to represent the chosen pattern
-
         yield return StartCoroutine(patternsPhase3[randomInt].Begin(emitters[1])); // Run that pattern
-
 
         isSecondaryCoroutineExecuting = false; //saying a coroutine is no longer running
     }

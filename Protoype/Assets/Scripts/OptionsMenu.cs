@@ -9,23 +9,21 @@ using UnityEngine.EventSystems;
 public class OptionsMenu : MonoBehaviour
 {
     private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
+    Resolution[] resolutions;
 
     public AudioMixer audioMixer;
     public AudioConfiguration Config;
 
     public TMP_ColorGradient[] gradients;
     public TMP_FontAsset[] fonts;
- 
     public TMP_Dropdown resolutionDropdown, textColourDropdown, fontDropdown;
-    public Slider playerHealth, attackSpeed, turnTime;
-    public float speed;
-    public int health, time, BGOnOffToggle, FXOnOffToggle, ContrastOnOffToggle;
-    public bool GameIsPaused = false;
-
     public TextMeshProUGUI[] allText;
 
-    Resolution[] resolutions;
-
+    public Slider playerHealth, attackSpeed, turnTime;
+    public float speed, health;
+    public int time, BGOnOffToggle, FXOnOffToggle, ContrastOnOffToggle;
+    public bool GameIsPaused = false;
+    
     public GameObject pauseMenuUI;
     public GameObject pauseFirst;
 
@@ -94,11 +92,11 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetGameplay()
     {
-        health = (int)playerHealth.value;
+        health = (float)playerHealth.value;
         speed = attackSpeed.value;
         time = (int)turnTime.value;
 
-        PlayerPrefs.SetInt("health", health);
+        PlayerPrefs.SetFloat("health", health);
         PlayerPrefs.SetInt("time", time);
         PlayerPrefs.SetFloat("speed", speed);
 
@@ -128,19 +126,6 @@ public class OptionsMenu : MonoBehaviour
     {
         audioMixer.SetFloat("EffectsVolume", EffectsVolume);
     }
-
-   /* public void SetMono(bool Mono)
-    {
-        if(Mono == true)
-        {
-            Config.speakerMode = AudioSpeakerMode.Mono;
-        }
-
-        if (Mono == false)
-        {
-            Config.speakerMode = AudioSpeakerMode.Stereo;
-        }
-    } */
 
     public void SetQuality(int QualityIndex)
     {

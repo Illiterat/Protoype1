@@ -16,14 +16,14 @@ public class SceneSwitcherScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // Will load player into next scene, (only works in menu)
     }
 
-    public void QuitGame() // Will quit the game (only works in menu)
+    public void QuitGame() // Will quit the game
     {
         Application.Quit();
     }
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(0); //Will also load player into menu scene, only works in win screen
+        SceneManager.LoadScene(0); //Will also load player into menu scene
     }
 
     public void NextScene()

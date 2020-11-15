@@ -2,15 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DamageAndHealthValues : MonoBehaviour
 {
     public AudioClip bossDamaged;
     public AudioSource source;
 
-    public int playerDamage;  // player damage done to the boss (to be accessed by tile script)
-    public int playerHealth;  // player health value for health bar
-    public int bossHealth;  // boss health value for health bar
+    public float playerDamage;  // player damage done to the boss (to be accessed by core movement script)
+    public float playerHealth;  // player health value for health bar
+    public float bossHealth;  // boss health value for health bar
+    public float playerMaxHealth;
+    public float bossMaxHealth;
+
+    public Image playerHealthBar;
+    public Image bossHealthBar;
 
     public PhaseManager Phase; // accessing the phase manager script
 
@@ -20,8 +26,10 @@ public class DamageAndHealthValues : MonoBehaviour
         GameObject Boss = GameObject.FindWithTag("Boss");
         source = Boss.GetComponent<AudioSource>();
         playerDamage = 0;  // starting values for variables
-        SetHealth();
-        bossHealth = 30;
+        playerMaxHealth = 5 + PlayerPrefs.GetFloat("health", 0);
+        playerHealth = playerMaxHealth;
+        bossMaxHealth = 30;
+        bossHealth = bossMaxHealth;
     }
 
     void Update()
@@ -30,24 +38,31 @@ public class DamageAndHealthValues : MonoBehaviour
         {
             DamageBoss(); //Triggering the damage to the boss during the Damage phase
         }
-        else
+
+        playerHealthBar.fillAmount = playerHealth / playerMaxHealth;
+        bossHealthBar.fillAmount = bossHealth / bossMaxHealth;
+
+        if(playerHealth <= 0)
         {
-            return;
+            playerHealth = 0;
         }
 
-
-        if (playerHealth == 0 || playerHealth <= 0)
+        if (bossHealth <= 0)
         {
-            SceneManager.LoadScene(0); // loading the 'start' scene when the boss's health goes below 0
+            bossHealth = 0;
         }
 
-    }
+        if (playerHealth == 0)
+        {
+            SceneManager.LoadScene(0); // loading the 'start' scene when the players's health goes below 0
+        }
 
-    void SetHealth()
-    {
-        playerHealth = 5 + PlayerPrefs.GetInt("health", 0);
+        if (bossHealth == 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Will move to next seen when boss dies
+        }
     }
-
+    
     void DamageBoss()  // when triggered will reduce the boss health by the player damage
     {
         bossHealth -= playerDamage;
